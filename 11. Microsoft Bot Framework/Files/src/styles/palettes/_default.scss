@@ -1,0 +1,13 @@
+@import "../palettes";
+
+$light: map-get($default-palette, "light");
+$dark: map-get($default-palette, "dark");
+$indigo: map-get($default-palette, "indigo");
+$blue-grey: map-get($default-palette, "blue-grey");
+
+$default-palette: (
+	"light": $light,
+	"dark": $dark,
+	"indigo": $indigo,
+	"blue-grey": $blue-grey
+);

@@ -1,0 +1,287 @@
+<div class="row">
+    <div class="col">
+        <div class="widget">
+            <div class="row">
+                <div class="col">
+                    <div class="title">Activities</div>
+                    <h1 class="title">{{title.description}}</h1>
+                    <div class="description">View all the activities based on your search condition</div>
+                    <br>
+                    <form class="form-inline">
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <span class="input-group-addon">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" name="searchFilter" [(ngModel)]="criteria.filter" style="width:600px" class="form-control" aria-label="Enter your search term"
+                                placeholder="Enter your search term">
+                        </div>
+                        <div class="form-group mb-2 mr-sm-2 mb-sm-0">
+                            <label for="search-frequency">Frequency</label>
+                            <select [(ngModel)]="frequency" name="searchFrequency" id="search-frequency" class="form-control">
+                                <option *ngFor="let type of frequencyType | enumKeys" [value]="type.key">{{type.value}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-2 mr-sm-2 mb-sm-0">
+                            <label for="search-interval">Interval</label>
+                            <input id="search-interval" style="width:50px;" class="form-control" name="searchInterval" type="text" placeholder="Enter interval"
+                                [(ngModel)]="interval" />
+                        </div>
+                        <div class="form-group mb-2 mr-sm-2 mb-sm-0">
+                            <button class="btn btn-primary btn-icon" type="button" (click)="search()">
+                                <i class="sli-magnifier"></i>
+                                <span>Search</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <activities-table [(activities)]="activities" [(selectedStage)]="selectedStage" [(selectedActivity)]="selectedActivity"></activities-table>
+                </div>
+                <div class="col">
+                    <div *ngIf="selectedActivity">
+                        <h2 id="activity-id">{{selectedActivity.interfaceName}}</h2>
+                        <div eventChart [(selectedActivity)]="selectedActivity" [(selectedStage)]="selectedStage" style="width:calc(100%); height:250px"></div>
+                    </div>
+                    <div *ngIf="!selectedActivity">
+                        Select an event to view details
+                    </div>
+                    
+                    <ul *ngIf="selectedActivity" class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" data-target="#default-tabs-0-1">Main Activity</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" data-target="#default-tabs-0-3">Tracked Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" data-target="#default-tabs-0-2">Stage Activity</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" data-target="#default-tabs-0-4">Related Activities</a>
+                        </li>
+                    </ul>
+                    <div *ngIf="selectedStage" class="tab-content">
+                        <div class="tab-pane active" id="default-tabs-0-1" role="tabpanel">
+                            <table class="table table-unbordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Overview</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Activity Id</td>
+                                        <td>{{selectedActivity.activityId}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Environment Id</td>
+                                        <td>{{selectedActivity.environmentId}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Interface Name</td>
+                                        <td>{{selectedActivity.interfaceName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Message Id</td>
+                                        <td>{{selectedActivity.messageId}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Message Type</td>
+                                        <td>{{selectedActivity.messageType}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Batch Id</td>
+                                        <td>{{selectedActivity.batchId}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sender Id</td>
+                                        <td>{{selectedActivity.senderId}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Receiver Id</td>
+                                        <td>{{selectedActivity.receiverId}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="default-tabs-0-2" role="tabpanel">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" data-target="#stage-tabs-0-1">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" data-target="#stage-tabs-0-2">Archive Details</a>
+                                </li>
+                                <li *ngIf="selectedStage.exceptions && selectedStage.exceptions.length>0" class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" data-target="#stage-tabs-0-3">Exceptions</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="stage-tabs-0-1" class="tab-pane active">
+                                    <table class="table table-unbordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Overview</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Stage Activity Id</td>
+                                                <td>{{selectedStage.id}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Current Stage</td>
+                                                <td>{{selectedStage.currentStage}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Previous Stage</td>
+                                                <td>{{selectedStage.previousStage}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sender Id</td>
+                                                <td>{{selectedStage.senderId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Receiver Id</td>
+                                                <td>{{selectedStage.receiverId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Message Type</td>
+                                                <td>{{selectedStage.messageType}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Start Time</td>
+                                                <td>{{selectedStage.startTime}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>End Time</td>
+                                                <td>{{selectedStage.endTime}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Archive Id</td>
+                                                <td>{{selectedStage.archiveId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status</td>
+                                                <td>{{selectedStage.status}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="stage-tabs-0-2" class="tab-pane">
+                                    <table class="table table-unbordered table-striped" *ngFor="let archive of selectedStage.archives">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Archive Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Archive Id</td>
+                                                <td>{{archive.archiveId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Message Body</td>
+                                                <td>
+                                                    <a href="http://localhost:53054/api/activities/archives/content/{{archive.archiveId}}" target="_blank">Click to download the message content</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Message Context</td>
+                                                <td>
+                                                    <textarea name="" id="" cols="30" rows="10" readonly>
+                                                                        {{archive.messageContext|json}}
+                                                                    </textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Message Direction</td>
+                                                <td>{{archive.messageDirection}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Archive Time</td>
+                                                <td>{{archive.archiveTime}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="stage-tabs-0-3" class="tab-pane" *ngIf="selectedStage.exceptions && selectedStage.exceptions.length>0">
+                                    <table class="table table-unbordered table-striped">
+                                        <tbody *ngFor="let exception of selectedStage.exceptions">
+                                            <tr>
+                                                <td>Exception Id</td>
+                                                <td>{{exception.exceptionId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Environment Id</td>
+                                                <td>{{exception.environmentId}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Exception Details</td>
+                                                <td>{{exception.exceptionDetails}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Exception Type</td>
+                                                <td>{{exception.exceptionType}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="tab-pane" id="default-tabs-0-3" role="tabpanel">
+                            <table class="table table-unbordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Main tracked data</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let key of selectedActivity.trackedData | keys">
+                                        <td>{{key}}</td>
+                                        <td>{{selectedActivity.trackedData[key]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-unbordered table-striped" *ngFor="let stage of selectedActivity.stages; let i = index">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Stage tracked data ({{stage.currentStage}})</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of stage.trackedData">
+                                        <td>{{data.displayName}}</td>
+                                        <td>{{data.value}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane" id="default-tabs-0-4" role="tabpanel">
+                            <table class="table table-unbordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Activity Id</th>
+                                        <th>Interface Name</th>
+                                        <th>Message Id</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let activity of relatedActivities">
+                                        <td>{{activity.activityId}}</td>
+                                        <td>{{activity.interfaceName}}</td>
+                                        <td>{{activity.messageId}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

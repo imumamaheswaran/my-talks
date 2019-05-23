@@ -1,0 +1,70 @@
+@import "../variables";
+@import "../mixins";
+@import "_sample-form-3";
+$width: 800px;
+$height: 600px;
+$padding: 40px;
+$margin: 10px;
+
+.create-account {
+  &.sample-form-3 {
+    @include sample-form-3($height, $width, $padding, $margin);
+
+    @include box-shadow;
+
+    @media (max-width: 543px) {
+      @include sample-form-3($height, 400px, $padding, $margin);
+
+      form {
+        padding-right: 0;
+      }
+
+      .side-description {
+        display: none;
+      }
+
+      .side-bg-1,
+      .side-bg-2 {
+        display: none;
+      }
+    }
+
+    @media (min-width: 544px) and (max-width: 767px) {
+      @include sample-form-3($height, 500px, $padding, $margin);
+
+      form {
+        padding-right: 0;
+      }
+
+      .side-description {
+        display: none;
+      }
+
+      .side-bg-1,
+      .side-bg-2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .create-account {
+      &.sample-form-3 {
+        background-color: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+
+        .logo {
+          background-color: transparent;
+          color: map-get($bootstrap-colors, "light");
+        }
+
+        .side-description {
+          color: map-get($bootstrap-colors, "light");
+        }
+      }
+    }
+  }
+}

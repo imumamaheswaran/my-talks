@@ -1,0 +1,50 @@
+@import "../variables";
+@import "../mixins";
+
+.sidebar-widget-1 {
+  margin-top: $side-margin;
+  margin-bottom: $side-margin * 2;
+
+  .section-title {
+    margin-bottom: 10px;
+  }
+
+  .project-status {
+    padding: 0 25px;
+
+    .row {
+      margin-bottom: 20px;
+
+      p {
+        font-size: 0.85rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .sidebar-widget-1 {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+			.progress {
+				background-color: map-get($value, "background-color");
+			}
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-sidebar="#{$key}"] {
+      .sidebar-widget-1 {
+        background: map-get($value, "even-color");
+				.progress {
+					background-color: map-get($value, "even-color");
+				}
+      }
+    }
+  }
+}

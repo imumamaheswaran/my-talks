@@ -1,0 +1,55 @@
+@import "../variables";
+@import "../mixins";
+
+#dropdown-grid {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 0 20px 0;
+  margin-top: -1px;
+
+  .dropdown-title {
+    margin-bottom: 20px;
+  }
+
+  .grid-item {
+    text-align: center;
+    padding: 10px;
+    width: 90px;
+
+    i {
+      @include font-size(32px);
+    }
+
+    .title {
+      margin-top: 10px;
+
+      @include font-size(13px);
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    #dropdown-grid {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+
+      .dropdown-title {
+        background: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+
+      .grid-item {
+        color: map-get($value, "color");
+
+        .title {
+          color: map-get($value, "color");
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+//width and min-width from 0 to 100px
+@for $i from 0 through 10 {
+  .w-#{$i * 10} {
+    width: #{$i * 10}px !important;
+  }
+
+  .min-w-#{$i * 10} {
+    min-width: #{$i * 10}px !important;
+  }
+
+  .max-w-#{$i * 10} {
+    max-width: #{$i * 10}px !important;
+  }
+}
+
+//height and min-height from 150px to 500px in 50px increments
+@for $i from 3 through 10 {
+  .w-#{$i * 50} {
+    width: #{$i * 50}px !important;
+  }
+
+  .min-w-#{$i * 50} {
+    min-width: #{$i * 50}px !important;
+  }
+
+  .max-w-#{$i * 50} {
+    max-width: #{$i * 50}px !important;
+  }
+}

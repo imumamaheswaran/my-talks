@@ -1,0 +1,261 @@
+@import "../variables";
+@import "../palettes/buttons";
+
+[data-controller="ui-elements"][data-view="buttons"] {
+  .demo {
+    .btn {
+      margin-right: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+$amount: 10%;
+$colors: map-merge($bootstrap-colors, $social-media-colors);
+
+.btn {
+  font-weight: 700;
+
+  //transition: all .2s ease-in-out !default
+  &.btn-icon {
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  &.btn-sm {
+    font-size: 0.75rem !important;
+  }
+
+  @each $key, $value in $colors {
+    &.btn-#{$key},
+    &.btn-#{$key}.dropdown-toggle {
+      background: #{$value};
+
+      @if $key == "light" {
+        color: map-get($colors, "dark");
+      } @else {
+        color: #fff;
+      }
+      border-color: #{$value};
+      text-transform: uppercase;
+      font-size: 0.8rem;
+
+      &:hover,
+      &:active,
+      &:focus,
+      &:visited,
+      &.focus {
+        @if $key == "light" {
+          color: map-get($colors, "dark");
+        } @else {
+          color: #fff;
+        }
+        background: darken($value, $amount);
+        border-color: darken($value, $amount);
+      }
+
+      &.btn-rounded {
+        border-radius: $border-radius;
+      }
+
+      &.btn-outline {
+        background: none;
+        color: #{$value};
+        border-style: solid;
+        border-width: 1px;
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          color: darken($value, $amount);
+          border-color: darken($value, $amount);
+        }
+
+        &.btn-rounded {
+          border-radius: 15px;
+        }
+      }
+
+      &.btn-flat {
+        color: #{$value};
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          color: darken($value, $amount);
+        }
+      }
+
+      &.btn-circle {
+        border-radius: 50%;
+        padding: 15px;
+        height: 55px;
+        width: 55px;
+        text-align: center;
+        font-size: 16px;
+
+        i {
+          margin: 0;
+          padding: 0;
+        }
+
+        &.btn-xs {
+          border-radius: 50%;
+          padding: 5px;
+          height: 35px;
+          width: 35px;
+          font-size: 14px;
+        }
+
+        &.btn-sm {
+          border-radius: 50%;
+          padding: 10px;
+          height: 45px;
+          width: 45px;
+          font-size: 17px;
+        }
+
+        &.btn-lg {
+          height: 65px;
+          width: 65px;
+          border-radius: 50%;
+          padding: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .btn {
+      &.btn-flat {
+        background: map-get($value, "background-color");
+        border-color: map-get($value, "background-color");
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          background: darken(map-get($value, "background-color"), 2);
+          border-color: darken(map-get($value, "background-color"), 2);
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $button-palettes {
+  [data-background="#{$key}"] {
+    .btn {
+      &.btn-default {
+        background: map-get($value, "background-color");
+        border-color: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          background: map-get($value, "background-hover-color");
+          border-color: map-get($value, "background-hover-color");
+          color: map-get($value, "hover-color");
+        }
+
+        &.btn-outline {
+          background: none;
+          color: map-get($value, "color");
+          border-style: solid;
+          border-width: 1px;
+          border-color: map-get($value, "color");
+
+          &:hover,
+          &:active,
+          &:focus,
+          &:visited {
+            color: darken(map-get($value, "color"), $amount);
+            border-color: darken(map-get($value, "color"), $amount);
+          }
+
+          &.btn-rounded {
+            border-radius: 15px;
+          }
+        }
+
+        &.btn-flat {
+          background: transparent;
+          border-color: transparent;
+          color: map-get($value, "color");
+
+          &:hover,
+          &:active,
+          &:focus,
+          &:visited {
+            background: transparent;
+            border-color: transparent;
+            color: darken(map-get($value, "color"), $amount);
+          }
+        }
+      }
+    }
+  }
+}
+$groups: rounded, outlined, flat;
+$amount: 5%;
+
+.btn-group {
+  @each $group in $groups {
+    &.btn-group-#{$group} {
+      .btn {
+        border-radius: 0;
+
+        &.btn-rounded {
+          &:first-child {
+            border-radius: $border-radius 0 0 $border-radius;
+          }
+
+          &:last-child {
+            border-radius: 0 $border-radius $border-radius 0;
+          }
+        }
+      }
+    }
+  }
+
+  .btn {
+    border-radius: 0;
+
+    @each $key, $value in $bootstrap-colors {
+      &.btn-#{$key}:not(.btn-outline):not(.btn-flat) {
+        border-color: lighten($value, $amount);
+
+        &:nth-child(even) {
+          background-color: lighten($value, $amount);
+        }
+
+        &:hover,
+        &:active,
+        &:focus,
+        &:visited {
+          background: darken($value, $amount);
+          border-color: darken($value, $amount);
+        }
+      }
+    }
+  }
+}
+
+[data-controller="ui-elements"][data-view="buttons"] {
+  .row {
+    .button-groups-example {
+      margin-bottom: $margin-bottom;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

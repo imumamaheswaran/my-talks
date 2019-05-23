@@ -1,0 +1,285 @@
+@import "../variables";
+@import "../palettes/forms";
+$custom-select-padding-x: 0.75rem !default;
+$custom-select-bg-size: 8px 10px !default;
+$custom-control-indicator-bg: map-get($bootstrap-colors, "light");
+
+.form-inline {
+  .form-group {
+    margin-right: 10px;
+
+    label {
+      margin-right: 10px;
+    }
+  }
+}
+
+@each $key, $value in $form-palettes {
+  [data-background="#{$key}"] {
+    .form-control {
+      color: map-get($value, 'color');
+      background-color: map-get($value, 'background-color');
+      border-width: 1px;
+      border-color: map-get($value, 'border-color');
+
+      &:focus {
+        border-color: map-get($value, 'focus-color');
+      }
+    }
+    $custom-control-indicator-bg: darken(map-get($value, 'background-color'), 8);
+
+    .custom-control-indicator {
+      background-color: $custom-control-indicator-bg;
+    }
+
+    .has-success {
+      $custom-control-checked-indicator-color: map-get($bootstrap-colors, 'success');
+      $custom-control-checked-indicator-bg: map-get($bootstrap-colors, 'success');
+      $custom-control-active-indicator-color: map-get($bootstrap-colors, 'success');
+      $custom-control-active-indicator-bg: map-get($bootstrap-colors, 'success');
+
+      .custom-control-input {
+        &:checked ~ .custom-control-indicator {
+          color: $custom-control-checked-indicator-color;
+          background-color: $custom-control-checked-indicator-bg;
+          box-shadow: none;
+        }
+
+        &:focus ~ .custom-control-indicator {
+          box-shadow: none;
+        }
+
+        &:active ~ .custom-control-indicator {
+          color: $custom-control-active-indicator-color;
+          background-color: $custom-control-active-indicator-bg;
+          box-shadow: none;
+        }
+
+        &:disabled {
+          ~ .custom-control-indicator {
+            //background-color: $custom-control-disabled-indicator-bg;
+          }
+
+          ~ .custom-control-description {
+            //color: $custom-control-disabled-description-color;
+          }
+        }
+      }
+
+      .custom-control-indicator {
+        background-color: $custom-control-indicator-bg;
+      }
+    }
+
+    .has-danger {
+      $custom-control-checked-indicator-color: map-get($bootstrap-colors, 'danger');
+      $custom-control-checked-indicator-bg: map-get($bootstrap-colors, 'danger');
+      $custom-control-active-indicator-color: map-get($bootstrap-colors, 'danger');
+      $custom-control-active-indicator-bg: map-get($bootstrap-colors, 'danger');
+
+      .custom-control-input {
+        &:checked ~ .custom-control-indicator {
+          color: $custom-control-checked-indicator-color;
+          background-color: $custom-control-checked-indicator-bg;
+          box-shadow: none;
+        }
+
+        &:focus ~ .custom-control-indicator {
+          box-shadow: none;
+        }
+
+        &:active ~ .custom-control-indicator {
+          color: $custom-control-active-indicator-color;
+          background-color: $custom-control-active-indicator-bg;
+          box-shadow: none;
+        }
+
+        &:disabled {
+          ~ .custom-control-indicator {
+            //background-color: $custom-control-disabled-indicator-bg;
+          }
+
+          ~ .custom-control-description {
+            //color: $custom-control-disabled-description-color;
+          }
+        }
+      }
+
+      .custom-control-indicator {
+        background-color: $custom-control-indicator-bg;
+      }
+    }
+
+    .has-warning {
+      $custom-control-checked-indicator-color: map-get($bootstrap-colors, 'warning');
+      $custom-control-checked-indicator-bg: map-get($bootstrap-colors, 'warning');
+      $custom-control-active-indicator-color: map-get($bootstrap-colors, 'warning');
+      $custom-control-active-indicator-bg: map-get($bootstrap-colors, 'warning');
+
+      .custom-control-input {
+        &:checked ~ .custom-control-indicator {
+          color: $custom-control-checked-indicator-color;
+          background-color: $custom-control-checked-indicator-bg;
+          box-shadow: none;
+        }
+
+        &:focus ~ .custom-control-indicator {
+          box-shadow: none;
+        }
+
+        &:active ~ .custom-control-indicator {
+          color: $custom-control-active-indicator-color;
+          background-color: $custom-control-active-indicator-bg;
+          box-shadow: none;
+        }
+
+        &:disabled {
+          ~ .custom-control-indicator {
+            //background-color: $custom-control-disabled-indicator-bg;
+          }
+
+          ~ .custom-control-description {
+            //color: $custom-control-disabled-description-color;
+          }
+        }
+      }
+
+      .custom-control-indicator {
+        background-color: $custom-control-indicator-bg;
+      }
+    }
+    $custom-control-checked-indicator-color: map-get($value, 'highlight-color');
+    $custom-control-checked-indicator-bg: map-get($value, 'highlight-color');
+    $custom-control-active-indicator-color: map-get($value, 'highlight-color');
+    $custom-control-active-indicator-bg: map-get($value, 'highlight-color');
+
+    .custom-control-input {
+      &:checked ~ .custom-control-indicator {
+        color: $custom-control-checked-indicator-color;
+        background-color: $custom-control-checked-indicator-bg;
+        box-shadow: none;
+      }
+
+      &:focus ~ .custom-control-indicator {
+        box-shadow: none;
+      }
+
+      &:active ~ .custom-control-indicator {
+        color: $custom-control-active-indicator-color;
+        background-color: $custom-control-active-indicator-bg;
+        box-shadow: none;
+      }
+
+      &:disabled {
+        ~ .custom-control-indicator {
+          //background-color: $custom-control-disabled-indicator-bg;
+        }
+
+        ~ .custom-control-description {
+          //color: $custom-control-disabled-description-color;
+        }
+      }
+    }
+
+    .custom-file {
+      .custom-file-control {
+        color: map-get($value, 'color');
+        border-color: map-get($value, 'border-color');
+        background-color: map-get($value, 'background-color');
+
+        &:before {
+          color: #fff;
+          border-color: map-get($bootstrap-colors, 'primary');
+          background-color: map-get($bootstrap-colors, 'primary');
+        }
+
+        &:after {
+          color: map-get($value, 'color');
+          border-color: map-get($value, 'border-color');
+          background-color: map-get($value, 'background-color');
+        }
+      }
+    }
+
+    @if ($key == 'light') {
+      $custom-select-bg: map-get($value, 'background-color');
+      $custom-select-indicator-color: map-get($value, 'color');
+      $custom-select-indicator: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") !default;
+
+      .custom-select {
+        color: map-get($value, 'color');
+        border-color: map-get($value, 'border-color');
+        background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
+        background-size: $custom-select-bg-size;
+      }
+    } @else if($key == 'dark' or $key == 'indigo' or $key == 'blue-grey') {
+      $custom-select-bg: darken(map-get($value, 'border-color'), 4);
+      $custom-select-indicator-color: map-get($value, 'color');
+      $custom-select-indicator: url("data:image/svg+xml;charset=utf8, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$custom-select-indicator-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") !default;
+
+      .custom-select {
+        color: map-get($value, 'color');
+        border-color: map-get($value, 'border-color');
+        background: $custom-select-bg $custom-select-indicator no-repeat right $custom-select-padding-x center;
+        background-size: $custom-select-bg-size;
+      }
+    }
+  }
+}
+
+//input groups
+
+@each $key, $value in $form-palettes {
+  [data-background="#{$key}"] {
+    .input-group {
+      overflow: hidden;
+
+      .input-group-addon {
+        color: map-get($value, 'color');
+        background-color: map-get($value, 'even-color');
+        border-color: map-get($value, 'even-color');
+      }
+
+      .form-control {
+        color: map-get($value, 'color');
+        background-color: map-get($value, 'background-color');
+        border-color: map-get($value, 'border-color');
+      }
+
+      .input-group-btn {
+        .btn {
+          padding: 11px 11px 12px 11px;
+          border-width: 1px;
+
+          &.btn-default {
+            color: #fff;
+            background-color: map-get($value, 'even-color');
+            border-color: map-get($value, 'even-color');
+
+            &:hover,
+            &:active,
+            &:focus,
+            &:visited,
+            &.focus {
+              color: #fff;
+              background-color: map-get($value, 'even-color');
+              border-color: map-get($value, 'even-color');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.input-group {
+  .input-group-addon:nth-child(1) {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  .input-group-addon:nth-child(2) {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}

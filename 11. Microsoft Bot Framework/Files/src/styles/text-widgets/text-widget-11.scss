@@ -1,0 +1,24 @@
+@import '../variables';
+@import '../mixins';
+
+$height: 60px;
+.text-widget-11 {
+
+	height: $height;
+	padding: 0 10px;
+  .row {
+		height: $height / 2;
+  }
+
+  h4 {
+    @include font-size(16px);
+    font-weight: 700;
+		margin: 2px 0 0 0;
+  }
+
+  h5 {
+    @include font-size(13px);
+		margin: 0 0 2px 0;
+  }
+
+}

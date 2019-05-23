@@ -1,0 +1,37 @@
+@import '../variables';
+@import '../mixins';
+
+$height: 140px;
+.bar-chart-widget-8 {
+	@include font-size(15px);
+	height: $height - 5px;
+	overflow: hidden;
+	.row-2 {
+		height: $height / 2;
+	}
+	.row-1 {
+		height: $height / 2;
+		> .col {
+			> .row {
+				height: $height / 2;
+			}
+		}
+	}
+	.number, 
+	.text {
+		padding: 0 10px;
+		white-space: nowrap;
+	}
+	i {
+		padding: 0 10px;
+		@include font-size(20px);
+	}
+	.text {
+		@include font-size(13px);
+	}
+	.number {
+		@include font-size(15px);
+		font-weight: 700;
+	}
+}
+

@@ -1,0 +1,5 @@
+D:\Data\Documents\Sessions\9. Productivity Improvement 2017\ExploringVisualStudio\.vs\ExploringVisualStudio\lut\0\b\Product.Engine\bin\Debug\Product.Engine.dll
+D:\Data\Documents\Sessions\9. Productivity Improvement 2017\ExploringVisualStudio\.vs\ExploringVisualStudio\lut\0\b\Product.Engine\bin\Debug\Product.Engine.pdb
+D:\Data\Documents\Sessions\9. Productivity Improvement 2017\ExploringVisualStudio\.vs\ExploringVisualStudio\lut\0\i\Product.Engine\Debug\Product.Engine.csproj.CoreCompileInputs.cache
+D:\Data\Documents\Sessions\9. Productivity Improvement 2017\ExploringVisualStudio\.vs\ExploringVisualStudio\lut\0\i\Product.Engine\Debug\Product.Engine.dll
+D:\Data\Documents\Sessions\9. Productivity Improvement 2017\ExploringVisualStudio\.vs\ExploringVisualStudio\lut\0\i\Product.Engine\Debug\Product.Engine.pdb

@@ -1,0 +1,243 @@
+@import "../variables";
+@import "../mixins";
+
+[data-controller="ui-elements"][data-view="dropdowns"] {
+  .row.demo {
+    padding-bottom: 200px;
+
+    .dropdown-toggle {
+      margin-bottom: 20px;
+    }
+  }
+}
+$dropdown-col-width: 200px;
+$dropdown-padding: 10px;
+
+.dropdown,
+.btn-group {
+  .dropdown-title {
+    width: 100%;
+  }
+
+  .dropdown-header {
+    font-size: 0.8rem;
+    padding: $dropdown-padding;
+  }
+
+  .dropdown-item {
+    font-size: 0.9rem;
+    padding: $dropdown-padding;
+  }
+
+  &.dropdown-sm {
+    .dropdown-header {
+      padding: $dropdown-padding - 4;
+      font-size: 0.8rem;
+    }
+
+    .dropdown-item {
+      padding: $dropdown-padding - 4;
+      font-size: 0.8rem;
+    }
+  }
+
+  &.dropdown-lg {
+    .dropdown-header {
+      //border: none;
+      padding: $dropdown-padding + 4;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-item {
+      //border: none;
+      padding: $dropdown-padding + 4;
+      font-size: 1rem;
+    }
+  }
+
+  .dropdown-header {
+    font-weight: 700;
+  }
+
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+    padding: 0;
+    margin: 0;
+    border: none;
+    transform-origin: 0 0;
+
+    @include box-shadow-1;
+
+    &.from-left {
+      transform-origin: 0 0;
+    }
+
+    &.from-center {
+      transform-origin: 50% 50%;
+    }
+
+    &.from-right {
+      transform-origin: 100% 0;
+    }
+
+    &.from-top {
+      transform-origin: 50% 0;
+    }
+
+    &.dropdown-menu-left {
+      left: 0;
+      right: auto;
+    }
+
+    &.dropdown-menu-center {
+      left: 0;
+      right: 0;
+
+      .dropdown-item {
+        max-width: 100%;
+      }
+    }
+
+    &.dropdown-menu-right {
+      left: auto;
+      right: 0;
+    }
+
+    .dropdown-divider {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+  }
+}
+
+.dropup,
+.btn-group.dropup {
+  .dropdown-menu {
+    left: 0;
+    right: auto;
+    transform-origin: 0 100%;
+
+    &.from-left {
+      transform-origin: 0 100%;
+    }
+
+    &.from-center {
+      transform-origin: 50% 100%;
+    }
+
+    &.from-right {
+      transform-origin: 100% 100%;
+    }
+  }
+}
+
+.dropdown {
+  &:not(.show) {
+    .dropdown-menu {
+      visibility: hidden;
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+
+  &.show {
+    .dropdown-menu {
+      min-width: $dropdown-col-width;
+
+      &.dropdown-menu-cols {
+        //right: auto;
+        //left: auto;
+        display: flex;
+        visibility: visible;
+        pointer-events: auto;
+        opacity: 1;
+        padding-top: 0;
+        padding-bottom: 0;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        &.dropdown-cols-1 {
+          width: $dropdown-col-width * 1 + $dropdown-padding;
+
+          .dropdown-item {
+            flex: 0 0 ($dropdown-col-width + $dropdown-padding);
+          }
+        }
+
+        &.dropdown-cols-2 {
+          width: $dropdown-col-width * 2 + $dropdown-padding;
+
+          .dropdown-item {
+            flex: 0 0 ($dropdown-col-width + $dropdown-padding / 2);
+          }
+        }
+
+        &.dropdown-cols-3 {
+          width: $dropdown-col-width * 3 + $dropdown-padding;
+
+          .dropdown-item {
+            flex: 0 0 ($dropdown-col-width + $dropdown-padding / 3);
+          }
+        }
+
+        &.dropdown-cols-4 {
+          width: $dropdown-col-width * 4 + $dropdown-padding;
+
+          .dropdown-item {
+            display: inline;
+            flex: 0 0 ($dropdown-col-width + $dropdown-padding / 4);
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .dropdown-menu {
+      background: map-get($value, "background-color");
+      border-color: map-get($value, "background-color");
+      color: map-get($value, "color");
+
+      .dropdown-title {
+        color: map-get($value, "color");
+        background: map-get($value, "border-color");
+      }
+
+      .dropdown-header {
+        color: map-get($value, "header-color");
+
+        &:hover {
+          color: map-get($value, "color");
+        }
+      }
+
+      .dropdown-divider {
+        background: map-get($value, "border-color");
+      }
+
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+
+        &:hover {
+          background: map-get($value, "highlight-color");
+          border-color: map-get($value, "highlight-color");
+          color: #fff;
+
+          //color: map-get($value, 'color');
+        }
+      }
+    }
+  }
+}
+
+.dropdown {
+  &.show > .animated {
+    animation-delay: 0;
+  }
+}

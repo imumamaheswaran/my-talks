@@ -1,0 +1,15 @@
+[data-controller="documentation"][data-view="credits"] {
+  .credits {
+    > li {
+      margin-bottom: 40px;
+
+      p {
+        margin-bottom: 10px;
+
+        &:nth-child(1) {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import "../variables";
+@import "../mixins";
+
+[data-controller="notifications"][data-view="popovers"] {
+  .demo {
+    .btn {
+      margin-right: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.popover {
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+.popover::before,
+.popover::after {
+  display: none;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    $popover-bg: map-get($value, "background-color");
+    $popover-border-color: map-get($value, "border-color");
+    $popover-arrow-outer-color: map-get($value, "border-color");
+    $popover-arrow-color: map-get($value, "border-color");
+    $popover-title-bg: map-get($value, "border-color");
+    $popover-border-width: 0px;
+
+    .popover {
+      background-color: $popover-bg;
+      color: map-get($value, "color");
+      border: $popover-border-width solid $popover-border-color;
+
+      @include box-shadow;
+
+      .popover-title {
+        font-size: 14px;
+        text-transform: uppercase;
+        background-color: map-get($value, "border-color");
+      }
+
+      &.popover-top,
+      &.bs-tether-element-attached-bottom {
+        &::before {
+          border-top-color: $popover-arrow-outer-color;
+        }
+
+        &::after {
+          border-top-color: $popover-arrow-color;
+        }
+      }
+
+      &.popover-right,
+      &.bs-tether-element-attached-left {
+        &::before {
+          border-right-color: $popover-arrow-outer-color;
+        }
+
+        &::after {
+          border-right-color: $popover-arrow-color;
+        }
+      }
+
+      &.popover-bottom,
+      &.bs-tether-element-attached-top {
+        &::before {
+          border-bottom-color: $popover-arrow-outer-color;
+        }
+
+        &::after {
+          border-bottom-color: $popover-title-bg;
+        }
+
+        .popover-title::before {
+          border-bottom: none;
+        }
+      }
+
+      &.popover-left,
+      &.bs-tether-element-attached-right {
+        &::before {
+          border-left-color: $popover-arrow-outer-color;
+        }
+
+        &::after {
+          border-left-color: $popover-arrow-color;
+        }
+      }
+    }
+
+    .popover-title {
+      background-color: $popover-title-bg;
+      border-bottom: none;
+    }
+  }
+}
+
+.popover {
+  @each $key, $value in $bootstrap-colors {
+    &.popover-#{$key} {
+      border-radius: 0;
+      border: none;
+      padding: 0;
+
+      .popover-title {
+        font-size: 14px;
+        text-transform: uppercase;
+        border-radius: 0;
+        background-color: $value;
+        border-color: $value;
+        color: #fff;
+      }
+    }
+  }
+}

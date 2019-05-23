@@ -1,0 +1,126 @@
+@import "../variables";
+
+.list-group {
+  .list-group-item {
+    &.active {
+      background: map-get($bootstrap-colors, "primary");
+      border-color: map-get($bootstrap-colors, "primary");
+      color: #fff;
+    }
+
+    @each $key, $value in $bootstrap-colors {
+      &.list-group-item-#{$key} {
+        &.active {
+          background: $value;
+        }
+      }
+    }
+    display: flex;
+
+    .row {
+      width: 100%;
+    }
+
+    @each $n in 40, 60, 80, 100, 120, 140 {
+      .flex-#{$n} {
+        flex: 0 0 #{$n}px;
+      }
+    }
+  }
+
+  .list-group-item-heading,
+  .list-group-item-text {
+    display: block !important;
+    width: 100%;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .list-group-item {
+    padding: 0.5rem 1rem;
+  }
+
+  &.list-group-lg {
+    .list-group-item {
+      padding: 0.6rem 1.2rem;
+    }
+  }
+
+  &.list-group-sm {
+    .list-group-item {
+      padding: 0.4rem 0.8rem;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .list-group-item {
+      background-color: map-get($value, "background-color");
+      border-color: map-get($value, "border-color");
+      color: map-get($value, "color");
+
+      p {
+        color: map-get($value, "color");
+      }
+
+      &.active {
+        background: map-get($value, "highlight-color");
+        border-color: map-get($value, "highlight-color");
+        color: #fff;
+
+        p {
+          color: #fff;
+        }
+      }
+
+      &.disabled {
+        background-color: map-get($value, "border-color");
+      }
+
+      &:nth-child(even):not(.active) {
+        background-color: map-get($value, "even-color");
+        border-color: map-get($value, "border-color");
+      }
+
+      &.list-group-item-action:not(.active) {
+        .list-group-item-heading,
+        .list-group-item-text {
+          color: map-get($value, "color");
+        }
+      }
+    }
+
+    .list-group {
+      &.unstriped,
+      &.not-striped {
+        .list-group-item {
+          &:nth-child(even):not(.active) {
+            background-color: map-get($value, "background-color");
+          }
+        }
+      }
+
+      &.not-bordered,
+      &.unbordered {
+        .list-group-item {
+          border: 0;
+
+          &:active {
+            border: 0;
+          }
+
+          &:nth-child(odd),
+          &:nth-child(odd):not(.active),
+          &:nth-child(even),
+          &:nth-child(even):not(.active) {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}

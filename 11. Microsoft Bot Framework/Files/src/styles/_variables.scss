@@ -1,0 +1,44 @@
+@import "colors";
+@import "palettes/default";
+@import "animations";
+
+$font-family: "Open Sans", sans-serif;
+
+//z-index
+$zindex-navbar: 1000;
+$zindex-navbar-fixed: 1030;
+$zindex-modal: 1050;
+
+//navbar
+$navbar-height: 70px;
+
+//sidebar
+$left-sidebar-width: 240px;
+$left-sidebar-collapsed-width: 80px;
+$right-sidebar-width: 300px;
+
+//top-navigation
+$top-navigation-menu-width: 200px;
+$top-navigation-height: 45px;
+$top-navigation-dropdown-height: 45px;
+$top-navigation-1-height: 45px;
+$top-navigation-1-dropdown-height: 45px;
+$top-navigation-2-height: 45px;
+$top-navigation-2-dropdown-height: 45px;
+$top-navigation-2-jumbotron-height: 130px;
+
+//logo
+$logo-height: $navbar-height;
+
+//global variables
+$side-margin: 20px;
+$margin-left: 20px;
+$margin-right: 20px;
+$margin-bottom: 20px;
+$border-radius: 12px;
+
+//responsive breakpoint
+$breakpoint: 768px;
+
+$default-transform: transform 0.25s ease;
+$alt-transform: transform 0.25s ease-in-out;

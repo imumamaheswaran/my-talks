@@ -1,0 +1,23 @@
+@import '../variables';
+@import '../mixins';
+
+.icon-widget-1 {
+	text-align: center;
+	@include font-size(15px);
+	height: 60px;
+	.row {
+		height: 60px;
+		> .col {
+			&:first-child {
+				text-align: right;
+			}
+			&:last-child {
+				text-align: left;
+			}
+		}
+	}
+	i {
+		@include font-size(17px);
+	}
+}
+

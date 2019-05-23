@@ -1,0 +1,47 @@
+@import "../variables";
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .pagination {
+      .page-item {
+        a {
+          color: map-get($value, "color");
+
+          @if $key == "light" {
+            border-color: map-get($value, "border-color");
+            background-color: #fff;
+          } @else {
+            border-color: lighten(map-get($value, "border-color"), 2%);
+            background-color: map-get($value, "border-color");
+          }
+        }
+
+        &:hover,
+        &.active {
+          a {
+            color: #fff;
+            border-color: map-get($value, "highlight-color");
+            background-color: map-get($value, "highlight-color");
+          }
+        }
+      }
+    }
+
+    .pagination {
+      @each $key, $value in $bootstrap-colors {
+        &.pagination-#{$key} {
+          .page-item {
+            &:hover,
+            &.active {
+              a {
+                color: #fff;
+                border-color: $value;
+                background-color: $value;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

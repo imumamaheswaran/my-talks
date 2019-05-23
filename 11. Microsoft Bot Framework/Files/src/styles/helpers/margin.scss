@@ -1,0 +1,34 @@
+//margin from 0 to 100px in 5px increments
+@for $i from 0 through 20 {
+  .m-#{$i * 5} {
+    margin: #{$i * 5}px !important;
+  }
+}
+
+//margin-left from 0 to 100px in 5px increments
+@for $i from 0 through 20 {
+  .m-l-#{$i * 5} {
+    margin-left: #{$i * 5}px !important;
+  }
+}
+
+//margin-right from 0 to 100px in 5px increments
+@for $i from 0 through 20 {
+  .m-r-#{$i * 5} {
+    margin-right: #{$i * 5}px !important;
+  }
+}
+
+//margin-top from 0 to 100px in 5px increments
+@for $i from 0 through 20 {
+  .m-t-#{$i * 5} {
+    margin-top: #{$i * 5}px !important;
+  }
+}
+
+//margin-bottom from 0 to 100px in 5px increments
+@for $i from 0 through 20 {
+  .m-b-#{$i * 5} {
+    margin-bottom: #{$i * 5}px !important;
+  }
+}

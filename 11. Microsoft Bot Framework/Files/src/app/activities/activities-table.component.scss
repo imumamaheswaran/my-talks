@@ -1,0 +1,44 @@
+#activities-table {
+    .k-detail-cell {
+        table {
+            tbody {
+                tr {            
+                    td {
+                        padding: 0px 12px !important;
+                    }
+                    &.success {
+                        td:nth-child(1){
+                            border-left: 3px solid green !important
+                        }
+                    }
+                    &.warning {
+                        td:nth-child(1){
+                            border-left: 3px solid orange !important
+                        }
+                        
+                    }
+                    &.danger {
+                        td:nth-child(1){
+                            border-left: 3px solid red !important  
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .timeline-widget-1 {
+        .timeline-item {
+            &:hover{
+                button{
+                    position: absolute;
+                    right: 0px;
+                    display: block;
+                }
+            }
+            button {
+                display:none;
+            }
+        }
+    }
+}

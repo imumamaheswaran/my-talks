@@ -1,0 +1,36 @@
+<kendo-grid id="activities-table" [data]="gridDataResult" [selectable]="true" [pageable]="true" [skip]="skip" [pageSize]="pageSize"
+    [scrollable]="false" (pageChange)="pageChange($event)">
+    <kendo-grid-column width="40">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <span class="fa" [ngClass]="{'fa-check-circle-o text-success':dataItem.status == 1,'fa-exclamation-circle text-warning':dataItem.status == 2,'fa-times-circle text-danger':dataItem.status == 3,'fa-question-circle-o':dataItem.status == 0}"></span>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="interfaceName" title="Interface Name">
+    </kendo-grid-column>
+    <kendo-grid-column field="messageId" title="Message Id">
+    </kendo-grid-column>
+    <kendo-grid-column title="Start Time">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            {{dataItem.startTime | fromNow}}
+        </ng-template>
+    </kendo-grid-column>
+    <ng-template kendoGridDetailTemplate let-dataItem>
+         <table class="table table-unbordered table-striped">
+            <tbody>
+                <tr *ngIf="!dataItem.stages">
+                    <td>No data to display</td> 
+                </tr>
+                <tr *ngFor="let stage of dataItem.stages" [ngClass]="{'success':stage.status == 1,'warning':stage.status == 2,'danger':stage.status == 3}">
+                    <td>{{stage.currentStage}}</td>
+                    <td>{{stage.previousStage}}</td>
+                    <td>{{stage.startTime | fromNow}}</td>
+                    <td>
+                        <button (click)="setSelectedStage(dataItem,stage)" class="btn btn-default btn-circle btn-xs btn-flat" type="button">
+                                <i class="fa fa-eye"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table> 
+    </ng-template>
+</kendo-grid>

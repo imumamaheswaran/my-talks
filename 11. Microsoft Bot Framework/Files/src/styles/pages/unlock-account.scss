@@ -1,0 +1,46 @@
+@import "../variables";
+@import "../mixins";
+@import "_sample-form-4";
+$width: 400px;
+$height: 370px;
+$padding: 30px;
+$margin: 10px;
+
+.unlock-account {
+  &.sample-form-4 {
+    @include sample-form-4($height, $width, $padding, $margin);
+
+    @include box-shadow;
+    text-align: center;
+
+    label {
+      display: none;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      border: 3px solid #fff;
+
+      @include box-shadow;
+      margin: 10px 0 40px 0;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .unlock-account {
+      &.sample-form-4 {
+        background-color: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+
+        h3 {
+          background-color: map-get($bootstrap-colors, "primary");
+          color: #fff;
+        }
+      }
+    }
+  }
+}

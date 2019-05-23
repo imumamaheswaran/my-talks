@@ -1,0 +1,3 @@
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\PipelineComponents\PC.MessageLogger\obj\Debug\MessageLogger.csprojResolveAssemblyReference.cache
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\PipelineComponents\PC.MessageLogger\obj\Debug\AtomicScope.PipelineComponents.MessageLogger.resources
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\PipelineComponents\PC.MessageLogger\obj\Debug\MessageLogger.csproj.GenerateResource.Cache

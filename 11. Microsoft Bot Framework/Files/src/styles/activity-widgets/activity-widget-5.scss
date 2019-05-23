@@ -1,0 +1,29 @@
+@import "../variables";
+@import "../mixins";
+
+.activity-widget-5 {
+
+	.media {
+		margin-bottom: $side-margin;
+	}
+	p {
+		@include font-size(13px);
+		margin-bottom: 10px;
+		&:first-child {
+			font-weight: 700;
+			color: map-get($bootstrap-colors, 'primary');
+		}
+		&:last-child {
+			font-weight: 700;
+			color: map-get($bootstrap-colors, 'danger');
+		}
+	}
+  .rounded-circle {
+    border: 3px solid #fff;
+    height: 50px;
+    width: 50px;
+    @include box-shadow;
+		margin-right: $side-margin;
+	}
+}
+

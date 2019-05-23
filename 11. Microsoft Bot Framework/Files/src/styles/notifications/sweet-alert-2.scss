@@ -1,0 +1,40 @@
+@import "../variables";
+@import "../mixins";
+
+.sweet-overlay {
+  z-index: $zindex-modal !important;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+		.sweet-alert {
+			@include box-shadow;
+      background: map-get($value, "background-color") !important;
+      border-color: map-get($value, "border-color") !important;
+      color: map-get($value, "color") !important;
+
+			h2 {
+				color: map-get($value, "color") !important;
+			}
+
+			p {
+				color: map-get($value, "color") !important;
+			}
+
+			button {
+				@include box-shadow;
+			}
+
+			.icon {
+				background: map-get($value, "background-color") !important;
+				border-color: map-get($value, "border-color") !important;
+				.fix,
+				&:before,
+				&:after {
+					background: map-get($value, "background-color") !important;
+				}
+			}
+		}
+
+	}
+}

@@ -1,0 +1,45 @@
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "../variables";
+
+[data-controller="ui-elements"][data-view="progress-bars"] {
+  .progress {
+    margin-bottom: 15px;
+  }
+}
+$height: 6px;
+
+.progress {
+  line-height: $height * 2;
+  height: $height * 2;
+
+  .progress-bar {
+    height: $progress-height * 2;
+  }
+
+  &.progress-sm {
+    line-height: $height;
+    height: $height;
+
+    .progress-bar {
+      height: $height;
+    }
+  }
+
+  &.progress-lg {
+    line-height: $height * 3;
+    height: $height * 3;
+
+    .progress-bar {
+      height: $height * 3;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .progress {
+      background-color: map-get($value, "background-color");
+    }
+  }
+}

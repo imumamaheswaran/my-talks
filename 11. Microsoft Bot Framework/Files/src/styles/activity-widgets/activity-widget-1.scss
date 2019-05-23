@@ -1,0 +1,10 @@
+.activity-widget-1 {
+  td:nth-child(1) {
+    width: 80px;
+  }
+
+  td:last-child {
+    text-align: right;
+    font-weight: 700;
+  }
+}

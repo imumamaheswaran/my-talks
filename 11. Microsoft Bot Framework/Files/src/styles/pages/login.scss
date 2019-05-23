@@ -1,0 +1,75 @@
+@import "../variables";
+@import "../mixins";
+@import "_sample-form-2";
+$width: 720px;
+$height: 540px;
+$padding: 40px;
+$margin: 10px;
+$left: $width / 3;
+
+.login {
+  &.sample-form-2 {
+    @include sample-form-2($height, $width, $padding, $margin);
+
+    @include box-shadow;
+
+    .side-bg-2 {
+      opacity: 0.85;
+    }
+
+    @media (max-width: 543px) {
+      @include sample-form-2($height, 400px, $padding, $margin);
+
+      form {
+        margin-left: 0;
+      }
+
+      .side-description {
+        display: none;
+      }
+
+      .side-bg-1,
+      .side-bg-2 {
+        display: none;
+      }
+    }
+
+    @media (min-width: 544px) and (max-width: 767px) {
+      @include sample-form-2($height, 500px, $padding, $margin);
+
+      form {
+        margin-left: 0;
+      }
+
+      .side-description {
+        display: none;
+      }
+
+      .side-bg-1,
+      .side-bg-2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .login {
+      &.sample-form-2 {
+        background-color: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+
+        .logo {
+          background-color: transparent;
+          color: map-get($bootstrap-colors, "light");
+        }
+
+        .side-description {
+          color: map-get($bootstrap-colors, "light");
+        }
+      }
+    }
+  }
+}

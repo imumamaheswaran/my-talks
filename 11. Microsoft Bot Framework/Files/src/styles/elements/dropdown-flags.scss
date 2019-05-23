@@ -1,0 +1,42 @@
+@import "../variables";
+@import "../mixins";
+
+#dropdown-flags {
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: -1px;
+
+  .dropdown-item {
+    width: 50%;
+
+    .flag {
+      margin-right: 10px;
+    }
+
+    .country-name {
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    #dropdown-flags {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+
+      .dropdown-title {
+        background: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+      }
+    }
+  }
+}	

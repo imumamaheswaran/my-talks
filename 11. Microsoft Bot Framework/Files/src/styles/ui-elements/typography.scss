@@ -1,0 +1,46 @@
+@import "../variables";
+@import "../palettes/typography";
+
+a,
+.btn {
+  font-family: $font-family;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.focus,
+  &.active {
+    cursor: pointer;
+    outline: none !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.blockquote {
+  @each $key, $value in $bootstrap-colors {
+    &.blockquote-#{$key}:not(.blockquote-reverse) {
+      border-left: 0.25rem solid $value;
+    }
+
+    &.blockquote-#{$key} {
+      &.blockquote-reverse {
+        border-right: 0.25rem solid $value;
+      }
+    }
+  }
+}
+
+@each $key, $value in $typography-palettes {
+  [data-background="#{$key}"] {
+    a {
+      color: map-get($value, "link-color");
+    }
+
+    pre,
+    code {
+      background: map-get($value, "border-color");
+      color: map-get($value, "highlight-color");
+    }
+  }
+}

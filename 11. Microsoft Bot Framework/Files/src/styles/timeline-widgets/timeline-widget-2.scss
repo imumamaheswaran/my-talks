@@ -1,0 +1,81 @@
+@import "../variables";
+
+.timeline-widget-2 {
+  position: relative;
+
+  .timeline-left {
+    text-align: right;
+
+    .timeline-item {
+      padding-right: 20px;
+    }
+  }
+
+  .timeline-right {
+    text-align: left;
+
+    .timeline-item {
+      padding-left: 20px;
+    }
+  }
+
+  .timeline-item {
+    font-size: 0.9rem;
+    padding-bottom: 20px;
+
+    p {
+      margin-bottom: 5px;
+
+      &:nth-child(1) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .actions {
+    font-size: 0.8rem;
+
+    span,
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  @each $name, $color in $bootstrap-colors {
+    .timeline-#{$name} {
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        display: table;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 2px;
+        top: 0;
+        bottom: 0px;
+        left: 50%;
+        z-index: 1;
+        background: $color;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 15px;
+        left: 50%;
+        margin-left: -5px;
+        width: 12px;
+        height: 12px;
+        background-color: $color;
+        border-radius: 50% !important;
+        z-index: 2;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+//opacity
+.o-0 {
+  opacity: 0 !important;
+}
+
+.o-1 {
+  opacity: 1 !important;
+}
+
+//hide pseudo elements
+.no-before {
+  &:before {
+    display: none !important;
+  }
+}
+
+.no-after {
+  &:after {
+    display: none !important;
+  }
+}
+
+//display
+.inline {
+  display: inline !important;
+}
+
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block !important;
+}
+
+//hide elements
+.no-display,
+.hidden {
+  display: none !important;
+}
+
+//floats
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.no-float {
+  float: none !important;
+}
+
+//center elements
+.centered {
+  margin: 0 auto !important;
+  text-align: center !important;
+}
+
+//prevent text wrapping
+.no-wrap {
+  white-space: nowrap !important;
+}
+
+//position
+.pos-abs {
+  position: absolute;
+}
+
+.pos-fix {
+  position: fixed;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+//box shadow
+.no-shadow {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+//background
+.no-bgi {
+  background-image: none !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+}

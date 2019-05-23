@@ -1,0 +1,6 @@
+//border-width from 0 to 5px
+@for $i from 0 through 5 {
+  .b-w-#{$i} {
+    border-width: #{$i}px !important;
+  }
+}

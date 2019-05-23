@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col">
+    <div class="widget">
+      <div class="row">
+        <div class="col">
+          <div class="title">Interfaces</div>
+        </div>
+      </div>
+      <div class="row">
+        <kendo-grid id="interfaces-list" [data]="[{
+          name:'Order Process',
+          createdOn:'2012-02-02',
+          environment:'Some Environment'
+        }]">
+          <kendo-grid-column field="name" title="Interface Name">
+          </kendo-grid-column>
+          <kendo-grid-column field="createdOn" title="Created On">
+          </kendo-grid-column>
+          <kendo-grid-column field="environment" title="Environment">
+          </kendo-grid-column>
+          <kendo-grid-column title="Details">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <div class="row justify-content-md-center">
+                <a routerLink="{{'/apps/interface-config/'+ dataItem.name}}">
+                  <i class="sli-pencil"></i>
+                </a>
+              </div>
+            </ng-template>
+          </kendo-grid-column>
+        </kendo-grid>
+      </div>
+    </div>
+  </div>
+</div>

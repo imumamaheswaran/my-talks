@@ -1,0 +1,33 @@
+@import "../variables";
+@import "../mixins";
+
+.user-widget-2 {
+
+	.media {
+		margin-bottom: $side-margin;
+	}
+	h5 {
+		@include font-size(15px);
+		font-weight: 700;
+		margin-bottom: 10px;
+	}
+	p {
+		@include font-size(13px);
+		margin-bottom: 10px;
+		.badge {
+			margin-right: 10px;
+		}
+	}
+	i {
+		margin-left: $side-margin;
+		margin-right: $side-margin;
+	}
+  .rounded-circle {
+    border: 3px solid #fff;
+    height: 50px;
+    width: 50px;
+    @include box-shadow;
+		margin-right: $side-margin;
+	}
+}
+

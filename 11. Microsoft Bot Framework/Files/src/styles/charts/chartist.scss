@@ -1,0 +1,115 @@
+@import "../variables";
+
+.ct-chart {
+  display: block;
+  min-height: 100px;
+  width: 100%;
+  height: 250px;
+}
+
+.ct-label {
+  font-size: 12px;
+}
+
+.ct-area {
+  stroke: none;
+  fill-opacity: 1;
+}
+$opacity: 100;
+$series: "a", "b", "c", "d", "e", "f";
+
+@each $value in $opacity {
+  @each $serie in $series {
+    @each $name, $color in $bootstrap-colors {
+      .series-#{$serie}-#{$name} {
+        .ct-series {
+          &.ct-series-#{$serie} {
+            .ct-area {
+              fill: $color;
+            }
+
+            .ct-line {
+              stroke: $color;
+              stroke-width: 3px;
+            }
+
+            .ct-point {
+              stroke: $color;
+              stroke-width: 6px;
+            }
+
+            .ct-bar {
+              stroke: $color;
+            }
+
+            .ct-slice-pie {
+              fill: $color;
+            }
+
+            .ct-slice-donut {
+              stroke: $color;
+            }
+          }
+        }
+      }
+
+      .series-#{$serie}-#{$name} {
+        &.opacity-#{$value} {
+          .ct-series {
+            &.ct-series-#{$serie} {
+              .ct-area {
+                fill: $color;
+                fill-opacity: ($value - 10) / 100;
+              }
+
+              .ct-line {
+                stroke: $color;
+                stroke-opacity: ($value - 10) / 100 + 0.1;
+                stroke-width: 3px;
+              }
+
+              .ct-point {
+                stroke: $color;
+                stroke-opacity: ($value - 10) / 100 + 0.1;
+                stroke-width: 6px;
+              }
+
+              .ct-bar {
+                stroke: $color;
+                stroke-opacity: ($value - 10) / 100 + 0.1;
+              }
+
+              .ct-slice-pie {
+                fill: $color;
+                fill-opacity: ($value - 10) / 100 + 0.1;
+              }
+
+              .ct-slice-donut {
+                stroke: $color;
+                stroke-opacity: ($value - 10) / 100 + 0.1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .ct-grid {
+      stroke: transparentize(map-get($value, "color"), 0.5);
+
+      &.ct-horizontal,
+      &.ct-vertical {
+        stroke: transparentize(map-get($value, "color"), 0.5);
+      }
+    }
+
+    .ct-label {
+      color: transparentize(map-get($value, "color"), 0.5);
+      fill: transparentize(map-get($value, "color"), 0.5);
+    }
+  }
+}

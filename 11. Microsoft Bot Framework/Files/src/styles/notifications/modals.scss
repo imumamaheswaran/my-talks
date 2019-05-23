@@ -1,0 +1,59 @@
+@import "../variables";
+@import "../mixins";
+
+.modal-dialog {
+  @include box-shadow;
+
+  .modal-header {
+    padding: 10px 20px;
+
+    .modal-title {
+      @include font-size(16px);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  .modal-footer {
+    text-align: left;
+    padding: 10px 20px;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .modal {
+      .modal-dialog {
+        .modal-content {
+          background-color: map-get($value, "background-color");
+          color: map-get($value, "color");
+
+          .modal-header,
+          .modal-body,
+          .modal-footer {
+            background-color: map-get($value, "background-color");
+            border-color: map-get($value, "border-color");
+            color: map-get($value, "color");
+          }
+        }
+      }
+    }
+
+    .modal {
+      @each $key, $value in $bootstrap-colors {
+        &.modal-#{$key} {
+          .modal-dialog {
+            .modal-content {
+              .modal-header {
+                background-color: $value;
+                color: #fff;
+                border-bottom: none;
+                padding: 15px 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

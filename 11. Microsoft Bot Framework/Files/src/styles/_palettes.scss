@@ -1,0 +1,62 @@
+@import "colors";
+@import "functions";
+
+@function generate-default-palette(
+	$background-color, 
+	$odd-color, 
+	$even-color, 
+	$hover-color, 
+	$border-color,
+	$color,
+	$highlight-color,
+	$alt-highlight-color
+) {
+	@return (
+		'background-color': $background-color,
+		'odd-color': $odd-color,
+		'even-color': $even-color,
+		'hover-color': $hover-color,
+		'border-color': $border-color,
+		'color': $color,
+		'highlight-color': $highlight-color,
+		'alt-highlight-color': $alt-highlight-color
+	)
+}
+
+@function generate-dark-palette(
+	$background-color, 
+	$amount, 
+	$color, 
+	$highlight-color, 
+	$alt-highlight-color
+) {
+	@return generate-default-palette(
+		map-get($background-colors, $background-color),
+		lighten(map-get($background-colors, $background-color), $amount * 1),
+		lighten(map-get($background-colors, $background-color), $amount * 2),
+		lighten(map-get($background-colors, $background-color), $amount * 2.5),
+		lighten(map-get($background-colors, $background-color), $amount * 3),
+		map-get($bootstrap-colors, $color),
+		map-get($bootstrap-colors, $highlight-color),
+		map-get($bootstrap-colors, $alt-highlight-color)
+	)
+}
+
+$amount: 2;
+//default colors for palettes
+
+$default-palette: (
+	'light': generate-default-palette(
+		#fff,
+		darken(#fff, $amount * 1),
+		darken(#fff, $amount * 2),
+		darken(#fff, $amount * 3),
+		darken(#fff, $amount * 4),
+		map-get($bootstrap-colors, 'dark'),
+		map-get($bootstrap-colors, 'warning'),
+		map-get($bootstrap-colors, 'primary')
+	),
+	'dark': generate-dark-palette('dark', $amount, 'light', 'warning', 'primary'),
+	'indigo': generate-dark-palette('indigo', $amount, 'light', 'warning', 'primary'),
+	'blue-grey': generate-dark-palette('blue-grey', $amount, 'light', 'warning', 'primary')
+);

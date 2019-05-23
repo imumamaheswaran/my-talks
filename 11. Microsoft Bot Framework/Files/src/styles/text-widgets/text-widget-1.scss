@@ -1,0 +1,42 @@
+.text-widget-1 {
+  position: relative;
+  padding: 15px;
+
+  .row {
+    margin: 0;
+    padding: 0;
+
+    .col {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .title {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    font-size: 0.8rem;
+  }
+
+  i {
+    font-size: 32px;
+  }
+
+  .icon-left {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    margin-top: -16px;
+  }
+
+  .icon-right {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    right: 15px;
+    margin-top: -16px;
+  }
+}

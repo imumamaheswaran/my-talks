@@ -1,0 +1,65 @@
+//text weight
+.text-bold {
+  font-weight: bold !important;
+}
+
+//text alignment
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+//text case
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+// font weight from 300 to 900
+@for $i from 3 through 9 {
+  .f-w-#{$i * 100} {
+    font-weight: #{$i * 100} !important;
+  }
+}
+
+// font size in px from 10px to 24px
+@for $i from 10 through 24 {
+  .f-s-#{$i} {
+    font-size: #{$i}px !important;
+  }
+}
+
+//font size in rem
+.text-xs {
+  font-size: 0.8rem !important;
+}
+
+.text-sm {
+  font-size: 0.95rem !important;
+}
+
+.text-default {
+  font-size: 1rem !important;
+}
+
+.text-lg {
+  font-size: 1.2rem !important;
+}

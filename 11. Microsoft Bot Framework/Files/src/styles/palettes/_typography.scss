@@ -1,0 +1,22 @@
+@import "../palettes";
+
+$light: map-get($default-palette, "light");
+$dark: map-get($default-palette, "dark");
+$indigo: map-get($default-palette, "indigo");
+$blue-grey: map-get($default-palette, "blue-grey");
+
+$light: map-set($light, "highlight-color", map-get($bootstrap-colors, "danger"));
+$light: map-set($light, "link-color", map-get($bootstrap-colors, "danger"));
+
+$dark: map-set($dark, "link-color", map-get($bootstrap-colors, "warning"));
+
+$indigo: map-set($indigo, "link-color", map-get($bootstrap-colors, "success"));
+
+$blue-grey: map-set($blue-grey, "link-color", map-get($bootstrap-colors, "warning"));
+
+$typography-palettes: (
+	"light": $light,
+	"dark": $dark,
+	"indigo": $indigo,
+	"blue-grey": $blue-grey
+);

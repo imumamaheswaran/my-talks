@@ -1,0 +1,256 @@
+@import "../variables";
+@import "../mixins";
+@import "../palettes";
+
+.nav {
+  &.nav-tabs,
+  &.nav-pills {
+    &.nav-tabs-justified,
+    &.nav-pills-justified {
+      display: table !important;
+      width: 100% !important;
+
+      > li {
+        float: none !important;
+        display: table-cell !important;
+
+        > a {
+          text-align: center !important;
+        }
+      }
+    }
+  }
+}
+
+.tab-content {
+  padding: $side-margin;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .nav {
+      &.nav-tabs {
+        border: 0;
+
+        .nav-item {
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+
+          &:hover,
+          &.open {
+            background: map-get($value, "background-color");
+          }
+
+          @media (max-width: 543px) {
+            display: block;
+            float: none;
+          }
+        }
+
+        .nav-link {
+          border: 0;
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+          position: relative;
+          padding: 10px 20px;
+          font-size: 14px;
+
+          &:after {
+            content: "";
+            display: block;
+            visibility: hidden;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 3px;
+            background-color: map-get($bootstrap-colors, "primary");
+            z-index: 2;
+          }
+
+          &:hover,
+          &.active {
+            background: map-get($value, "background-color");
+            font-weight: 700;
+
+            &:after {
+              display: block;
+              visibility: visible;
+            }
+          }
+
+          &.disabled {
+            cursor: none;
+            pointer-events: none;
+            opacity: 0.5;
+          }
+        }
+
+        @each $skey, $svalue in $bootstrap-colors {
+          &.nav-tabs-#{$skey} {
+            .nav-link {
+              &:after {
+                background-color: $svalue;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .nav {
+      &.nav-pills {
+        border: 0;
+
+        .nav-item {
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+
+          &:hover,
+          &.open {
+            background: map-get($value, "background-color");
+          }
+
+          @media (max-width: 543px) {
+            display: block;
+            float: none;
+          }
+        }
+
+        .nav-link {
+          border: 0;
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+          position: relative;
+          padding: 10px 20px;
+          font-size: 14px;
+
+          &:hover,
+          &.active {
+            background-color: map-get($bootstrap-colors, "primary");
+            color: #fff;
+            font-weight: 700;
+          }
+
+          &.disabled {
+            cursor: none;
+            pointer-events: none;
+            opacity: 0.5;
+          }
+        }
+
+        &.nav-pills-rounded {
+          .nav-link {
+            border-radius: $border-radius;
+          }
+        }
+
+        @each $skey, $svalue in $bootstrap-colors {
+          &.nav-pills-#{$skey} {
+            .nav-link {
+              &:hover,
+              &.active {
+                background-color: $svalue;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//.nav-tabs-vertical {
+//  display: flex;
+//  flex-direction: row;
+//
+//  .nav-tabs {
+//    display: flex;
+//    flex-direction: column;
+//    flex: 0 0 180px;
+//
+//    .nav-link {
+//      border-bottom: 0;
+//
+//      &:hover {
+//        border-right-width: 3px;
+//        border-right-style: solid;
+//        border-radius: 0;
+//
+//        &:after {
+//          background-color: transparent !important;
+//        }
+//      }
+//
+//      &.active {
+//        border-right-width: 3px;
+//        border-right-style: solid;
+//        border-radius: 0;
+//
+//        &:after {
+//          background-color: transparent !important;
+//        }
+//
+//        &:hover {
+//          border-radius: 0;
+//        }
+//      }
+//    }
+//  }
+//
+//  .tab-content {
+//    padding: 20px;
+//  }
+//}
+
+//@each $key, $value in $default-palette {
+//  [data-background="#{$key}"] {
+//    .nav-tabs-vertical {
+//      .nav-tabs {
+//        .nav-link {
+//          &:hover {
+//            border-color: map-get($value, "border-color");
+//            color: map-get($value, "color");
+//          }
+//
+//          &.active {
+//            border-color: map-get($bootstrap-colors, "primary");
+//            color: map-get($value, "color") !important;
+//
+//            &:hover {
+//              border-color: map-get($bootstrap-colors, "primary");
+//            }
+//          }
+//        }
+//      }
+//
+//      @each $skey, $svalue in $bootstrap-colors {
+//        &.nav-tabs-#{$skey} {
+//          .nav-link {
+//            &.active {
+//              border-color: $svalue !important;
+//
+//              &:hover {
+//                border-color: $svalue !important;
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
+
+//@media (max-width: 543px) {
+//  .nav-tabs-vertical {
+//    display: flex;
+//    flex-direction: column;
+//
+//    .nav-tabs {
+//      display: flex;
+//      flex-direction: column;
+//      flex: 1;
+//    }
+//  }
+//}

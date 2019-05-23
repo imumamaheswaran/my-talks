@@ -1,0 +1,70 @@
+@import "../variables";
+@import "../mixins";
+
+[data-target="dropdown-messages"] {
+  &.nav-link {
+    position: relative;
+
+    .badge {
+      transform: scale(0.85);
+      border: 0;
+      box-shadow: none !important;
+      position: absolute;
+      top: -5px;
+      right: 5px;
+    }
+  }
+}
+
+#dropdown-messages {
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: -1px;
+
+  .dropdown-item {
+    flex-direction: column;
+
+    p {
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .title {
+      }
+    }
+
+    .badge {
+      margin-right: 10px;
+    }
+
+    .date {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    #dropdown-messages {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+
+      .dropdown-title {
+        background: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+      }
+    }
+  }
+}	

@@ -1,0 +1,17 @@
+@import "../palettes";
+
+$light: map-get($default-palette, "light");
+$dark: map-get($default-palette, "dark");
+$indigo: map-get($default-palette, "indigo");
+$blue-grey: map-get($default-palette, "blue-grey");
+
+//palette overrides
+//$light: map-set($light, 'odd-color', #ffffff);
+//$light: map-set($light, 'even-color', map-get($colors, 'grey-100'));
+
+$table-palettes: (
+	"light": $light, 
+	"dark": $dark, 
+	"indigo": $indigo,
+	"blue-grey": $blue-grey
+);

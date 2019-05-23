@@ -1,0 +1,53 @@
+@import "../variables";
+@import "../mixins";
+
+.widget {
+  width: 100%;
+  padding: $side-margin;
+  margin-bottom: $margin-bottom;
+
+  > .row {
+    margin-bottom: $margin-bottom;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    margin-bottom: $margin-bottom / 4;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .description {
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .widget {
+      background-color: map-get($value, "background-color");
+      color: map-get($value, "color");
+    }
+  }
+}
+
+@media (max-width: #{$breakpoint}) {
+  .widget {
+    padding: ($side-margin / 2) 0;
+    margin-bottom: ($side-margin / 2);
+
+    > .row:nth-child(1) {
+      > .col {
+        .dropdown,
+        .btn {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@import "../variables";
+@import "../mixins";
+
+.user-widget-4 {
+	text-align: center;
+	padding: $side-margin 0;
+  .rounded-circle {
+    border: 3px solid #fff;
+    height: 80px;
+    width: 80px;
+    @include box-shadow;
+		margin-bottom: $side-margin;
+  }
+	h5 {
+		font-weight: 700;
+		@include font-size(15px);
+		margin-bottom: 10px;
+	}
+	p {
+		@include font-size(13px);
+		margin-bottom: 10px;
+	}
+	.icons {
+		margin-top: 10px;
+		> .col {
+			> .row {
+				margin-bottom: 10px;
+			}
+		}
+		i {
+			@include font-size(18px);
+		}
+	}
+}
+

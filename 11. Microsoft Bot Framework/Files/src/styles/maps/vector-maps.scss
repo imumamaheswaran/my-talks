@@ -1,0 +1,20 @@
+@import "../variables";
+
+.vector-map {
+  width: 100%;
+  min-height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .hoverinfo {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+      border-color: map-get($value, "border-color");
+      box-shadow: none !important;
+      border-radius: 5px;
+    }
+  }
+}

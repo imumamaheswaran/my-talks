@@ -1,0 +1,231 @@
+@import "../variables";
+@import "bourbon/app/assets/stylesheets/bourbon";
+
+img {
+  &.rounded {
+    border-radius: $border-radius;
+  }
+}
+
+.images-demo {
+  code {
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+}
+
+.fx-demo {
+  margin: 0 20px 20px 0;
+  float: left;
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+
+  > div {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.hover-fx-transition {
+  transition: .3s ease-in-out;
+}
+
+.linear-transition {
+  transition: .2s linear;
+}
+
+.zoom-in-1 {
+  overflow: hidden;
+
+  > img {
+    transform: scale(1);
+    @extend .hover-fx-transition;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.zoom-in-2 > img {
+  min-width: 300px;
+  height: auto;
+  @extend .hover-fx-transition;
+}
+
+.zoom-in-2:hover img {
+  min-width: 350px;
+}
+
+.zoom-out-1 > img {
+  transform: scale(1.5);
+  @extend .hover-fx-transition;
+}
+
+.zoom-out-1:hover img {
+  transform: scale(1);
+}
+
+.zoom-out-2 > img {
+  min-width: 400px;
+  height: auto;
+  @extend .hover-fx-transition;
+}
+
+.zoom-out-2:hover img {
+  min-width: 300px;
+}
+
+.zoom-out-3 > img {
+  transform: scale(1.1);
+  @extend .hover-fx-transition;
+}
+
+.zoom-out-3:hover img {
+  transform: scale(1);
+}
+
+.slide-right > img {
+  transform: scale(1.5) translate3d(30px, 0, 0);
+  @extend .hover-fx-transition;
+}
+
+.slide-right:hover img {
+  transform: scale(1.5) translate3d(0px, 0, 0);
+}
+
+.slide-left > img {
+  transform: scale(1.5) translate3d(-30px, 0, 0);
+  @extend .hover-fx-transition;
+}
+
+.slide-left:hover img {
+  transform: scale(1.5) translate3d(0px, 0, 0);
+}
+
+.slide-up > img {
+  transform: scale(1.5) translate3d(0, 30px, 0);
+  @extend .hover-fx-transition;
+}
+
+.slide-up:hover img {
+  transform: scale(1.5) translate3d(0, 0px, 0);
+}
+
+.slide-down > img {
+  transform: scale(1.5) translate3d(0, -30px, 0);
+  @extend .hover-fx-transition;
+}
+
+.slide-down:hover img {
+  transform: scale(1.5) translate3d(0, 0px, 0);
+}
+
+.rotate-1 {
+  overflow: hidden;
+
+  > img {
+    transform: rotate(15deg) scale(1.4);
+    @extend .hover-fx-transition;
+  }
+
+  &:hover {
+    img {
+      transform: rotate(0) scale(1);
+    }
+  }
+}
+
+.rotate-2 > img {
+  transform: rotate(-15deg) scale(1.4);
+  @extend .hover-fx-transition;
+}
+
+.rotate-2:hover img {
+  transform: rotate(0) scale(1);
+}
+
+.rotate-3 > img {
+  transform: rotate(360deg) scale(1.5);
+  transition: .3s linear;
+}
+
+.rotate-3:hover img {
+  transform: rotate(0) scale(1);
+}
+
+.rotate-4 > img {
+  transform: rotate(720deg) scale(1.5);
+  transition: .3s linear;
+}
+
+.rotate-4:hover img {
+  transform: rotate(0) scale(1);
+}
+
+.blur-1 > img {
+  -webkit-filter: blur(3px);
+  filter: blur(3px);
+  @extend .hover-fx-transition;
+}
+
+.blur-1:hover img {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+.grayscale-1 > img {
+  @include filter(grayscale(100%));
+  @extend .hover-fx-transition;
+}
+
+.grayscale-1:hover img {
+  @include filter(grayscale(0));
+}
+
+.sepia-1 > img {
+  @include filter(sepia(100%));
+  @extend .hover-fx-transition;
+}
+
+.sepia-1:hover img {
+  @include filter(sepia(0));
+}
+
+.opacity-1 > img {
+  opacity: 1;
+  @extend .linear-transition;
+}
+
+.opacity-1:hover img {
+  opacity: .5;
+}
+
+.opacity-2 > img {
+  opacity: 0.5;
+  @extend .linear-transition;
+}
+
+.opacity-2:hover img {
+  opacity: 1;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    img {
+      &.img-thumbnail {
+        background-color: map-get($value, "border-color");
+        border-color: map-get($value, "border-color");
+      }
+    }
+  }
+}

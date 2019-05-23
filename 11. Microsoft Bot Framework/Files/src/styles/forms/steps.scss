@@ -1,0 +1,14 @@
+@import "../variables";
+
+[data-controller="forms"][data-view="steps"] {
+	.form-group {
+		&.has-success,
+		&.has-danger {
+			.form-control.form-control-danger {
+				background-image: none !important;
+			}
+		}
+	}
+}
+
+

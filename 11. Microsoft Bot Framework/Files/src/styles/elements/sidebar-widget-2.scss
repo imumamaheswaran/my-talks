@@ -1,0 +1,47 @@
+@import "../variables";
+@import "../mixins";
+
+.sidebar-widget-2 {
+  margin-bottom: $side-margin * 2;
+
+  .list-group {
+    @include font-size(13px);
+    font-weight: 700;
+
+    i {
+      margin-left: 5px;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .sidebar-widget-2 {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+
+      .list-group-item {
+        background: map-get($value, "background-color") !important;
+        color: map-get($value, "color") !important;
+
+        p {
+          color: map-get($value, "color");
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-sidebar="#{$key}"] {
+      .sidebar-widget-2 {
+        background: map-get($value, "even-color");
+
+        .list-group-item {
+          background: map-get($value, "even-color") !important;
+        }
+      }
+    }
+  }
+}

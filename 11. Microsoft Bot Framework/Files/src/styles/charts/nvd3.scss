@@ -1,0 +1,170 @@
+@import "../variables";
+@import "../mixins";
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .nvd3,
+    .nv-label {
+      text {
+        fill: map-get($value, "color");
+        font-family: $font-family;
+        font-size: 12px;
+        font-weight: normal;
+      }
+    }
+
+    .nvd3-pie,
+    .nvd3-donut {
+      font-family: $font-family;
+      font-size: 12px;
+      font-weight: normal;
+
+      .nvd3.nv-pie path {
+        stroke: map-get($value, "background-color");
+      }
+
+      .nvd3.nv-pie path {
+        fill-opacity: 1;
+      }
+
+      .nv-label {
+        text {
+          fill: map-get($value, "color") !important;
+        }
+      }
+    }
+
+    .nvd3 .nv-axis path {
+      stroke: map-get($value, "border-color");
+    }
+
+    .nvd3 .nv-axis line {
+      stroke: map-get($value, "border-color");
+    }
+
+    .nvd3 .nv-bars .hover rect {
+      fill: map-get($value, "background-color");
+    }
+
+    .nvd3 .nv-bars text {
+      fill: map-get($value, "color");
+    }
+
+    .nvd3 .nv-bars .hover text {
+      fill: map-get($value, "color");
+    }
+
+    .nvd3 .nv-discretebar .nv-groups text,
+    .nvd3 .nv-multibarHorizontal .nv-groups text {
+      fill: map-get($value, "color");
+
+      //stroke: map-get($value, 'color');
+    }
+
+    .nvd3 line.nv-boxplot-median {
+      stroke: map-get($value, "color");
+    }
+
+    .nvd3 .nv-point-paths path {
+      stroke: map-get($value, "border-color");
+      fill: map-get($value, "border-color");
+    }
+
+    .nvd3 text {
+      font-family: $font-family;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .nvd3 .title {
+      font-family: $font-family;
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .nvd3 .nv-background {
+      fill: map-get($value, "background-color");
+    }
+
+    .nv-brush .resize path {
+      fill: map-get($value, "border-color");
+      stroke: map-get($value, "border-color");
+    }
+
+    .nvd3 .nv-brushBackground rect {
+      stroke: map-get($value, "background-color");
+      fill: map-get($value, "color");
+    }
+
+    .nvd3 .background path {
+      stroke: map-get($value, "background-color");
+    }
+
+    .nvd3 .nv-parallelCoordinates-brush .extent {
+      fill: map-get($value, "color");
+      stroke: map-get($value, "background-color");
+    }
+
+    .nvd3 .missingValuesline line {
+      stroke: map-get($value, "background-color");
+    }
+
+    .nvd3.nv-pie .nv-pie-title {
+      fill: map-get($value, "color");
+    }
+
+    .nvd3.nv-pie .nv-slice text {
+      stroke: map-get($value, "color");
+    }
+
+    .nvd3.nv-pie path {
+      stroke: map-get($value, "background-color");
+    }
+
+    .nvd3.nv-sparklineplus .nv-hoverValue line {
+      stroke: map-get($value, "border-color");
+    }
+
+    .nvd3.nv-sparklineplus .nv-yValue {
+      stroke: map-get($value, "color");
+    }
+
+    .nvd3.nv-sparklineplus .nv-maxValue {
+      stroke: map-get($value, "color");
+      fill: map-get($value, "color");
+    }
+
+    .nvd3.nv-sparklineplus .nv-minValue {
+      stroke: map-get($value, "color");
+      fill: map-get($value, "color");
+    }
+
+    .nvtooltip {
+      background: lighten(map-get($value, "background-color"), 10);
+      color: map-get($value, "color");
+      border: 1px solid map-get($value, "border-color");
+      font-family: $font-family;
+
+      @include box-shadow;
+    }
+
+    .nvtooltip h3 {
+      background: lighten(map-get($value, "background-color"), 10);
+      color: map-get($value, "color");
+      border: 1px solid map-get($value, "border-color");
+    }
+
+    .nvtooltip table td.legend-color-guide div {
+      border: 1px solid map-get($value, "border-color");
+    }
+
+    .nvd3 line.nv-guideline {
+      stroke: map-get($value, "border-color");
+    }
+
+    .nvd3.nv-stackedarea path.nv-area {
+      fill-opacity: 1;
+      stroke-opacity: 0;
+    }
+  }
+}

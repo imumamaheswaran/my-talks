@@ -1,0 +1,37 @@
+@import "../variables";
+@import "../mixins";
+
+[data-layout="collapsed-sidebar-1"] {
+  .sidebar-heading {
+    &.sidebar-heading-1 {
+      width: $left-sidebar-collapsed-width;
+      margin: 0;
+
+      .sidebar-heading-image {
+        min-height: 65px;
+        margin: 0 auto $side-margin auto;
+
+        .rounded-circle {
+          max-width: 60px;
+          width: 60px;
+          margin: 40px auto 0 -5px;
+        }
+
+        .badge {
+          transform: scale(0.65);
+          top: 32px;
+          left: calc(50%);
+        }
+      }
+
+      .dropdown {
+        display: none;
+      }
+
+      .icons {
+        display: none;
+      }
+    }
+  }
+}
+

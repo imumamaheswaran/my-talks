@@ -1,0 +1,72 @@
+@import "../variables";
+@import "border-width";
+
+//border radius in px
+.b-r-5 {
+  border-radius: 5px !important;
+}
+
+.b-r-10 {
+  border-radius: 10px !important;
+}
+
+//border radius in percents
+.b-r-25p {
+  border-radius: 25% !important;
+}
+
+.b-r-50p {
+  border-radius: 50% !important;
+}
+
+//no border, bo border-radius
+.n-b,
+.no-border {
+  border: 0 !important;
+}
+
+.n-b-l {
+  border-left: 0 !important;
+}
+
+.n-b-t {
+  border-top: 0 !important;
+}
+
+.n-b-r {
+  border-right: 0 !important;
+}
+
+.n-b-b {
+  border-bottom: 0 !important;
+}
+
+.n-r,
+.no-radius {
+  border-radius: 0 !important;
+}
+
+.demo-border-width {
+  height: 50px;
+  width: 100%;
+  border-style: solid;
+}
+
+.demo-border-radius {
+  height: 200px;
+  width: 200px;
+  display: block;
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .demo-border-width {
+      border-color: map-get($bootstrap-colors, "danger");
+      background: map-get($value, "highlight-color");
+    }
+
+    .demo-border-radius {
+      background: map-get($value, "highlight-color");
+    }
+  }
+}

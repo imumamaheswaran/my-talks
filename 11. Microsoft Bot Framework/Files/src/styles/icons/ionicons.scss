@@ -1,0 +1,86 @@
+@import "../variables";
+
+.ion-icon {
+  display: inline-block;
+  font-size: 16px;
+
+  &.ion-icon-1x {
+    font-size: 16px;
+  }
+
+  &.ion-icon-2x {
+    font-size: 28px;
+  }
+
+  &.ion-icon-3x {
+    font-size: 40px;
+  }
+}
+
+.ionicons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  .icon {
+    text-align: center;
+    width: 150px;
+    min-height: 100px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    i {
+      margin: 0 5px;
+    }
+
+    .icons {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .icon-class {
+      display: block;
+      font-size: 13px;
+      font-family: $font-family;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .ionicons {
+      .icon {
+        //background-color: map-get($value, 'background-color');
+        color: map-get($value, "color");
+
+        //border: 1px solid map-get($value, 'border-color');
+        i,
+        .icon-class {
+          color: map-get($value, "color");
+        }
+      }
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) {
+}
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) and (max-width: 767px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}

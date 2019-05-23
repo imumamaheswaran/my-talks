@@ -1,0 +1,104 @@
+@import "../variables";
+@import "../mixins";
+
+[data-controller="notifications"][data-view="tooltips"] {
+  .tooltips-demo {
+    .btn {
+      margin-right: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.tooltip {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+
+  &.in {
+    opacity: 1;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .tooltip {
+      .tooltip-inner {
+        border-radius: 5px;
+        background-color: map-get($value, "color");
+        color: map-get($value, "background-color");
+      }
+
+      &.tooltip-top,
+      &.bs-tether-element-attached-bottom {
+        .tooltip-inner::before {
+          border-top-color: map-get($value, "color");
+        }
+      }
+
+      &.tooltip-right,
+      &.bs-tether-element-attached-left {
+        .tooltip-inner::before {
+          border-right-color: map-get($value, "color");
+        }
+      }
+
+      &.tooltip-bottom,
+      &.bs-tether-element-attached-top {
+        .tooltip-inner::before {
+          border-bottom-color: map-get($value, "color");
+        }
+      }
+
+      &.tooltip-left,
+      &.bs-tether-element-attached-right {
+        .tooltip-inner::before {
+          border-left-color: map-get($value, "color");
+        }
+      }
+    }
+  }
+}
+
+.tooltip {
+  .tooltip-inner {
+    border-radius: 5px;
+  }
+
+  @each $key, $value in $bootstrap-colors {
+    &.tooltip-#{$key} {
+      .tooltip-inner {
+        border-radius: 5px;
+        background-color: $value;
+        color: #fff;
+      }
+
+      &.tooltip-top,
+      &.bs-tether-element-attached-bottom {
+        .tooltip-inner::before {
+          border-top-color: $value;
+        }
+      }
+
+      &.tooltip-right,
+      &.bs-tether-element-attached-left {
+        .tooltip-inner::before {
+          border-right-color: $value;
+        }
+      }
+
+      &.tooltip-bottom,
+      &.bs-tether-element-attached-top {
+        .tooltip-inner::before {
+          border-bottom-color: $value;
+        }
+      }
+
+      &.tooltip-left,
+      &.bs-tether-element-attached-right {
+        .tooltip-inner::before {
+          border-left-color: $value;
+        }
+      }
+    }
+  }
+}

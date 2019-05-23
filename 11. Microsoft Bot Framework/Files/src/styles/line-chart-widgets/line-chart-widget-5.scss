@@ -1,0 +1,28 @@
+@import '../variables';
+@import '../mixins';
+
+$height: 120px;
+.line-chart-widget-5 {
+
+	height: $height - 5px;
+	overflow: hidden;
+  .row-1,
+  .row-2 {
+		height: $height / 4;
+  }
+  .row-3 {
+		height: $height / 2;
+  }
+
+  h4 {
+		padding: 0 10px;
+    @include font-size(16px);
+    font-weight: 700;
+  }
+
+  h5 {
+		padding: 0 10px;
+    @include font-size(13px);
+  }
+
+}

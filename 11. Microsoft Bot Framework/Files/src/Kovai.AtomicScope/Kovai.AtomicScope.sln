@@ -1,0 +1,310 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.BizTalk", "Kovai.AtomicScope.BizTalk", "{65821E64-CF2D-42EB-A68A-5DC7C950C178}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{8B9F1EF9-ACE0-4EA0-8DCE-AFBB17F23301}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XLANG", "XLANG", "{C8F48E79-96E6-4DEF-B0CD-A0C52E2D72BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PipelineComponent", "PipelineComponent", "{A870CA7A-C08B-4D8C-871C-9B63975E6D83}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.Caching", "Kovai.AtomicScope.Caching", "{F294B230-0CE6-406B-8F76-D51547C39231}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.Data", "Kovai.AtomicScope.Data", "{71374549-EB5C-4FE2-A75D-B59B3C69ED4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.LogicApps", "Kovai.AtomicScope.LogicApps", "{07D3517F-C325-4C12-88A6-6FCE0204F90F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.Samples", "Kovai.AtomicScope.Samples", "{085415F8-B734-434F-BADF-BEC88FEBDF0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.Testing", "Kovai.AtomicScope.Testing", "{B2D4848F-190F-4CCA-9CC5-C064981E117E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.Web", "Kovai.AtomicScope.Web", "{54072D38-297B-402A-AF68-A401EE536C38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{443F4F32-D8A7-40C5-BEEB-1ED5B9CBAF4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomicScopeArchive", "Kovai.AtomicScope.BizTalk\PipelineComponents\AtomicScopeArchive\AtomicScopeArchive.csproj", "{41FC4788-C6B6-4CB7-BADE-C3CC09FDDB70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.Helper", "Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.Helper\Kovai.AtomicScope.Helper.csproj", "{B74CB003-F76D-4FBB-8285-2DEEE9F877C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.XLANGHelper", "Kovai.AtomicScope.BizTalk\XLANG\Kovai.AtomicScope.XLANGHelper\Kovai.AtomicScope.XLANGHelper.csproj", "{B16DA13E-2AC7-43CF-A3EB-48C2763AF42B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.MessageOnlySimulation", "Kovai.AtomicScope.Samples\Kovai.AtomicScope.MessageOnlySimulation\Kovai.AtomicScope.MessageOnlySimulation.btproj", "{CDF34CDB-E75A-4AD7-964C-377995615C0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.Pipelines", "Kovai.AtomicScope.Samples\Kovai.AtomicScope.Pipelines\Kovai.AtomicScope.Pipelines.btproj", "{4E3D0127-9797-4273-A437-4A117D4A03F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.TrackingSchema", "Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.TrackingSchema\Kovai.AtomicScope.TrackingSchema.btproj", "{CC15F4B9-0F4E-49B7-857A-3AA01C8364AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleBizTalkApplication", "Kovai.AtomicScope.Samples\SampleBizTalkApplication\SampleBizTalkApplication\SampleBizTalkApplication.btproj", "{03BA2A55-0A15-4499-978C-0AD400059671}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B19B3A42-B9E9-441C-91D1-E7BCD96283D8}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\data\AtomicScope.mdf = SolutionItems\data\AtomicScope.mdf
+		SolutionItems\data\AtomicScope_log.ldf = SolutionItems\data\AtomicScope_log.ldf
+		SolutionItems\data\AtomicScopeScript.sql = SolutionItems\data\AtomicScopeScript.sql
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.ActivityLogger", "Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.ActivityLogger\Kovai.AtomicScope.ActivityLogger.csproj", "{DE080B88-E737-4B17-8174-E0480BD0916B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageLogger", "Kovai.AtomicScope.BizTalk\PipelineComponents\PC.MessageLogger\MessageLogger.csproj", "{61BEBBB2-F624-471F-9F57-1886D294784C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHubConsumer", "Kovai.AtomicScope.Samples\EventHubConsumer\EventHubConsumer.csproj", "{C5E2A19A-FCE7-41F5-86FF-7B96B7E07316}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.APIs", "Kovai.AtomicScope.APIs\Kovai.AtomicScope.APIs.csproj", "{F85B8506-F27E-4C40-AEEF-98B6E064063C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.Data.SQL", "Kovai.AtomicScope.Data\Kovai.AtomicScope.Data.SQL\Kovai.AtomicScope.Data.SQL.csproj", "{C9471D96-D8EB-4EF8-BC6D-8C92F2C20697}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.Common", "Kovai.AtomicScope.Common", "{99E20CA9-526F-45CF-9BF1-17BD31D186E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.Data", "Kovai.AtomicScope.Data\Kovai.AtomicScope.Data.Common\Kovai.AtomicScope.Data.csproj", "{DA5C5761-E19F-4B40-9C79-6D721808C5E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.BusinessAccess", "Kovai.AtomicScope.Common\Kovai.AtomicScope.BusinessAccess\Kovai.AtomicScope.BusinessAccess.csproj", "{309A6518-325D-4732-9E0A-9A841BE0ECE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kovai.AtomicScope.APIs", "Kovai.AtomicScope.APIs", "{D7352661-E220-440B-86C8-42EF775A5A30}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Kovai.AtomicScope.Web", "Kovai.AtomicScope.Web", "{F963386D-B147-4F19-AC1F-D1EA4E83415F}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_8032"
+		Debug.AspNetCompiler.PhysicalPath = "Kovai.AtomicScope.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8032\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_8032"
+		Release.AspNetCompiler.PhysicalPath = "Kovai.AtomicScope.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_8032\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "8032"
+		SlnRelativePath = "Kovai.AtomicScope.Web\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{247A3B22-0C8D-452C-B05A-7850A558EDFA}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\scripts\01.CreateDatabase.sql = SolutionItems\scripts\01.CreateDatabase.sql
+		SolutionItems\scripts\02.AtomicScope_Archive.sql = SolutionItems\scripts\02.AtomicScope_Archive.sql
+		SolutionItems\scripts\03.AtomicScope_Exceptions.sql = SolutionItems\scripts\03.AtomicScope_Exceptions.sql
+		SolutionItems\scripts\04.AtomicScope_InterfaceConfiguration.sql = SolutionItems\scripts\04.AtomicScope_InterfaceConfiguration.sql
+		SolutionItems\scripts\05.AtomicScope_StageActivity.sql = SolutionItems\scripts\05.AtomicScope_StageActivity.sql
+		SolutionItems\scripts\06.AtomicScope_MainActivity.sql = SolutionItems\scripts\06.AtomicScope_MainActivity.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{3EE54DEB-12F9-4A79-8722-70E5A69220E2}"
+	ProjectSection(SolutionItems) = preProject
+		SolutionItems\config\AtomicScopeConfiguration.json = SolutionItems\config\AtomicScopeConfiguration.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.Core", "Kovai.AtomicScope.Core\Kovai.AtomicScope.Core.csproj", "{E068203B-35E2-415C-9427-0DC892822268}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kovai.AtomicScope.Models", "Kovai.AtomicScope.Models\Kovai.AtomicScope.Models.csproj", "{B567F220-F64C-40D7-AC84-727E166EFD5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "Kovai.AtomicScope.Testing\IntegrationTests\IntegrationTests.csproj", "{B66D898A-8BE6-47E5-99B2-32A321507621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUtility", "Kovai.AtomicScope.Testing\TestUtility\TestUtility.csproj", "{DF864C04-5924-4DAD-AE0D-92169EA90AAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41FC4788-C6B6-4CB7-BADE-C3CC09FDDB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41FC4788-C6B6-4CB7-BADE-C3CC09FDDB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41FC4788-C6B6-4CB7-BADE-C3CC09FDDB70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B74CB003-F76D-4FBB-8285-2DEEE9F877C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B74CB003-F76D-4FBB-8285-2DEEE9F877C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B74CB003-F76D-4FBB-8285-2DEEE9F877C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B16DA13E-2AC7-43CF-A3EB-48C2763AF42B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B16DA13E-2AC7-43CF-A3EB-48C2763AF42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B16DA13E-2AC7-43CF-A3EB-48C2763AF42B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF34CDB-E75A-4AD7-964C-377995615C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDF34CDB-E75A-4AD7-964C-377995615C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDF34CDB-E75A-4AD7-964C-377995615C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDF34CDB-E75A-4AD7-964C-377995615C0D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4E3D0127-9797-4273-A437-4A117D4A03F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3D0127-9797-4273-A437-4A117D4A03F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3D0127-9797-4273-A437-4A117D4A03F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E3D0127-9797-4273-A437-4A117D4A03F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CC15F4B9-0F4E-49B7-857A-3AA01C8364AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC15F4B9-0F4E-49B7-857A-3AA01C8364AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC15F4B9-0F4E-49B7-857A-3AA01C8364AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC15F4B9-0F4E-49B7-857A-3AA01C8364AB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{03BA2A55-0A15-4499-978C-0AD400059671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03BA2A55-0A15-4499-978C-0AD400059671}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{03BA2A55-0A15-4499-978C-0AD400059671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03BA2A55-0A15-4499-978C-0AD400059671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03BA2A55-0A15-4499-978C-0AD400059671}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DE080B88-E737-4B17-8174-E0480BD0916B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE080B88-E737-4B17-8174-E0480BD0916B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE080B88-E737-4B17-8174-E0480BD0916B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE080B88-E737-4B17-8174-E0480BD0916B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61BEBBB2-F624-471F-9F57-1886D294784C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BEBBB2-F624-471F-9F57-1886D294784C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BEBBB2-F624-471F-9F57-1886D294784C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BEBBB2-F624-471F-9F57-1886D294784C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5E2A19A-FCE7-41F5-86FF-7B96B7E07316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5E2A19A-FCE7-41F5-86FF-7B96B7E07316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5E2A19A-FCE7-41F5-86FF-7B96B7E07316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5E2A19A-FCE7-41F5-86FF-7B96B7E07316}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F85B8506-F27E-4C40-AEEF-98B6E064063C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F85B8506-F27E-4C40-AEEF-98B6E064063C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F85B8506-F27E-4C40-AEEF-98B6E064063C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F85B8506-F27E-4C40-AEEF-98B6E064063C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9471D96-D8EB-4EF8-BC6D-8C92F2C20697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9471D96-D8EB-4EF8-BC6D-8C92F2C20697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9471D96-D8EB-4EF8-BC6D-8C92F2C20697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9471D96-D8EB-4EF8-BC6D-8C92F2C20697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5C5761-E19F-4B40-9C79-6D721808C5E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5C5761-E19F-4B40-9C79-6D721808C5E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5C5761-E19F-4B40-9C79-6D721808C5E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5C5761-E19F-4B40-9C79-6D721808C5E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{309A6518-325D-4732-9E0A-9A841BE0ECE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{309A6518-325D-4732-9E0A-9A841BE0ECE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{309A6518-325D-4732-9E0A-9A841BE0ECE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{309A6518-325D-4732-9E0A-9A841BE0ECE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F963386D-B147-4F19-AC1F-D1EA4E83415F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F963386D-B147-4F19-AC1F-D1EA4E83415F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F963386D-B147-4F19-AC1F-D1EA4E83415F}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{F963386D-B147-4F19-AC1F-D1EA4E83415F}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{E068203B-35E2-415C-9427-0DC892822268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E068203B-35E2-415C-9427-0DC892822268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E068203B-35E2-415C-9427-0DC892822268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E068203B-35E2-415C-9427-0DC892822268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B567F220-F64C-40D7-AC84-727E166EFD5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B567F220-F64C-40D7-AC84-727E166EFD5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B567F220-F64C-40D7-AC84-727E166EFD5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B567F220-F64C-40D7-AC84-727E166EFD5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66D898A-8BE6-47E5-99B2-32A321507621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66D898A-8BE6-47E5-99B2-32A321507621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66D898A-8BE6-47E5-99B2-32A321507621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66D898A-8BE6-47E5-99B2-32A321507621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF864C04-5924-4DAD-AE0D-92169EA90AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF864C04-5924-4DAD-AE0D-92169EA90AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF864C04-5924-4DAD-AE0D-92169EA90AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF864C04-5924-4DAD-AE0D-92169EA90AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B9F1EF9-ACE0-4EA0-8DCE-AFBB17F23301} = {65821E64-CF2D-42EB-A68A-5DC7C950C178}
+		{C8F48E79-96E6-4DEF-B0CD-A0C52E2D72BB} = {65821E64-CF2D-42EB-A68A-5DC7C950C178}
+		{A870CA7A-C08B-4D8C-871C-9B63975E6D83} = {65821E64-CF2D-42EB-A68A-5DC7C950C178}
+		{41FC4788-C6B6-4CB7-BADE-C3CC09FDDB70} = {A870CA7A-C08B-4D8C-871C-9B63975E6D83}
+		{B74CB003-F76D-4FBB-8285-2DEEE9F877C7} = {8B9F1EF9-ACE0-4EA0-8DCE-AFBB17F23301}
+		{B16DA13E-2AC7-43CF-A3EB-48C2763AF42B} = {C8F48E79-96E6-4DEF-B0CD-A0C52E2D72BB}
+		{CDF34CDB-E75A-4AD7-964C-377995615C0D} = {085415F8-B734-434F-BADF-BEC88FEBDF0E}
+		{4E3D0127-9797-4273-A437-4A117D4A03F2} = {085415F8-B734-434F-BADF-BEC88FEBDF0E}
+		{CC15F4B9-0F4E-49B7-857A-3AA01C8364AB} = {8B9F1EF9-ACE0-4EA0-8DCE-AFBB17F23301}
+		{03BA2A55-0A15-4499-978C-0AD400059671} = {085415F8-B734-434F-BADF-BEC88FEBDF0E}
+		{B19B3A42-B9E9-441C-91D1-E7BCD96283D8} = {443F4F32-D8A7-40C5-BEEB-1ED5B9CBAF4B}
+		{DE080B88-E737-4B17-8174-E0480BD0916B} = {8B9F1EF9-ACE0-4EA0-8DCE-AFBB17F23301}
+		{61BEBBB2-F624-471F-9F57-1886D294784C} = {A870CA7A-C08B-4D8C-871C-9B63975E6D83}
+		{C5E2A19A-FCE7-41F5-86FF-7B96B7E07316} = {085415F8-B734-434F-BADF-BEC88FEBDF0E}
+		{F85B8506-F27E-4C40-AEEF-98B6E064063C} = {D7352661-E220-440B-86C8-42EF775A5A30}
+		{C9471D96-D8EB-4EF8-BC6D-8C92F2C20697} = {71374549-EB5C-4FE2-A75D-B59B3C69ED4C}
+		{DA5C5761-E19F-4B40-9C79-6D721808C5E2} = {71374549-EB5C-4FE2-A75D-B59B3C69ED4C}
+		{309A6518-325D-4732-9E0A-9A841BE0ECE2} = {99E20CA9-526F-45CF-9BF1-17BD31D186E7}
+		{F963386D-B147-4F19-AC1F-D1EA4E83415F} = {54072D38-297B-402A-AF68-A401EE536C38}
+		{247A3B22-0C8D-452C-B05A-7850A558EDFA} = {443F4F32-D8A7-40C5-BEEB-1ED5B9CBAF4B}
+		{3EE54DEB-12F9-4A79-8722-70E5A69220E2} = {443F4F32-D8A7-40C5-BEEB-1ED5B9CBAF4B}
+		{E068203B-35E2-415C-9427-0DC892822268} = {99E20CA9-526F-45CF-9BF1-17BD31D186E7}
+		{B567F220-F64C-40D7-AC84-727E166EFD5C} = {99E20CA9-526F-45CF-9BF1-17BD31D186E7}
+		{B66D898A-8BE6-47E5-99B2-32A321507621} = {B2D4848F-190F-4CCA-9CC5-C064981E117E}
+		{DF864C04-5924-4DAD-AE0D-92169EA90AAD} = {B2D4848F-190F-4CCA-9CC5-C064981E117E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 20
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://kovai.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Kovai.AtomicScope.BizTalk\\PipelineComponents\\AtomicScopeArchive\\AtomicScopeArchive.csproj
+		SccProjectTopLevelParentUniqueName1 = Kovai.AtomicScope.sln
+		SccProjectName1 = Kovai.AtomicScope.BizTalk/PipelineComponents/AtomicScopeArchive
+		SccLocalPath1 = Kovai.AtomicScope.BizTalk\\PipelineComponents\\AtomicScopeArchive
+		SccProjectUniqueName2 = Kovai.AtomicScope.BizTalk\\Common\\Kovai.AtomicScope.Helper\\Kovai.AtomicScope.Helper.csproj
+		SccProjectTopLevelParentUniqueName2 = Kovai.AtomicScope.sln
+		SccProjectName2 = Kovai.AtomicScope.BizTalk/Common/Kovai.AtomicScope.Helper
+		SccLocalPath2 = Kovai.AtomicScope.BizTalk\\Common\\Kovai.AtomicScope.Helper
+		SccProjectUniqueName3 = Kovai.AtomicScope.BizTalk\\XLANG\\Kovai.AtomicScope.XLANGHelper\\Kovai.AtomicScope.XLANGHelper.csproj
+		SccProjectTopLevelParentUniqueName3 = Kovai.AtomicScope.sln
+		SccProjectName3 = Kovai.AtomicScope.BizTalk/XLANG/Kovai.AtomicScope.XLANGHelper
+		SccLocalPath3 = Kovai.AtomicScope.BizTalk\\XLANG\\Kovai.AtomicScope.XLANGHelper
+		SccProjectUniqueName4 = Kovai.AtomicScope.Samples\\Kovai.AtomicScope.MessageOnlySimulation\\Kovai.AtomicScope.MessageOnlySimulation.btproj
+		SccProjectTopLevelParentUniqueName4 = Kovai.AtomicScope.sln
+		SccProjectName4 = Kovai.AtomicScope.Samples/Kovai.AtomicScope.MessageOnlySimulation
+		SccLocalPath4 = Kovai.AtomicScope.Samples\\Kovai.AtomicScope.MessageOnlySimulation
+		SccProjectUniqueName5 = Kovai.AtomicScope.Samples\\Kovai.AtomicScope.Pipelines\\Kovai.AtomicScope.Pipelines.btproj
+		SccProjectTopLevelParentUniqueName5 = Kovai.AtomicScope.sln
+		SccProjectName5 = Kovai.AtomicScope.Samples/Kovai.AtomicScope.Pipelines
+		SccLocalPath5 = Kovai.AtomicScope.Samples\\Kovai.AtomicScope.Pipelines
+		SccProjectUniqueName6 = Kovai.AtomicScope.BizTalk\\Common\\Kovai.AtomicScope.TrackingSchema\\Kovai.AtomicScope.TrackingSchema.btproj
+		SccProjectTopLevelParentUniqueName6 = Kovai.AtomicScope.sln
+		SccProjectName6 = Kovai.AtomicScope.BizTalk/Common/Kovai.AtomicScope.TrackingSchema
+		SccLocalPath6 = Kovai.AtomicScope.BizTalk\\Common\\Kovai.AtomicScope.TrackingSchema
+		SccProjectUniqueName7 = Kovai.AtomicScope.Samples\\SampleBizTalkApplication\\SampleBizTalkApplication\\SampleBizTalkApplication.btproj
+		SccProjectTopLevelParentUniqueName7 = Kovai.AtomicScope.sln
+		SccProjectName7 = Kovai.AtomicScope.Samples/SampleBizTalkApplication/SampleBizTalkApplication
+		SccLocalPath7 = Kovai.AtomicScope.Samples\\SampleBizTalkApplication\\SampleBizTalkApplication
+		SccProjectUniqueName8 = Kovai.AtomicScope.BizTalk\\Common\\Kovai.AtomicScope.ActivityLogger\\Kovai.AtomicScope.ActivityLogger.csproj
+		SccProjectTopLevelParentUniqueName8 = Kovai.AtomicScope.sln
+		SccProjectName8 = Kovai.AtomicScope.BizTalk/Common/Kovai.AtomicScope.ActivityLogger
+		SccLocalPath8 = Kovai.AtomicScope.BizTalk\\Common\\Kovai.AtomicScope.ActivityLogger
+		SccProjectUniqueName9 = Kovai.AtomicScope.BizTalk\\PipelineComponents\\PC.MessageLogger\\MessageLogger.csproj
+		SccProjectTopLevelParentUniqueName9 = Kovai.AtomicScope.sln
+		SccProjectName9 = Kovai.AtomicScope.BizTalk/PipelineComponents/PC.MessageLogger
+		SccLocalPath9 = Kovai.AtomicScope.BizTalk\\PipelineComponents\\PC.MessageLogger
+		SccProjectUniqueName10 = Kovai.AtomicScope.Samples\\EventHubConsumer\\EventHubConsumer.csproj
+		SccProjectTopLevelParentUniqueName10 = Kovai.AtomicScope.sln
+		SccProjectName10 = Kovai.AtomicScope.Samples/EventHubConsumer
+		SccLocalPath10 = Kovai.AtomicScope.Samples\\EventHubConsumer
+		SccProjectUniqueName11 = Kovai.AtomicScope.Data\\Kovai.AtomicScope.Data.SQL\\Kovai.AtomicScope.Data.SQL.csproj
+		SccProjectTopLevelParentUniqueName11 = Kovai.AtomicScope.sln
+		SccProjectName11 = Kovai.AtomicScope.Data/Kovai.AtomicScope.Data.SQL
+		SccLocalPath11 = Kovai.AtomicScope.Data\\Kovai.AtomicScope.Data.SQL
+		SccProjectUniqueName12 = Kovai.AtomicScope.Data\\Kovai.AtomicScope.Data.Common\\Kovai.AtomicScope.Data.csproj
+		SccProjectTopLevelParentUniqueName12 = Kovai.AtomicScope.sln
+		SccProjectName12 = Kovai.AtomicScope.Data/Kovai.AtomicScope.Data.Common
+		SccLocalPath12 = Kovai.AtomicScope.Data\\Kovai.AtomicScope.Data.Common
+		SccProjectUniqueName13 = Kovai.AtomicScope.APIs\\Kovai.AtomicScope.APIs.csproj
+		SccProjectTopLevelParentUniqueName13 = Kovai.AtomicScope.sln
+		SccProjectName13 = Kovai.AtomicScope.APIs
+		SccLocalPath13 = Kovai.AtomicScope.APIs
+		SccWebProject14 = true
+		SccProjectUniqueName14 = Kovai.AtomicScope.Web
+		SccProjectTopLevelParentUniqueName14 = Kovai.AtomicScope.sln
+		SccProjectName14 = Kovai.AtomicScope.Web
+		SccLocalPath14 = Kovai.AtomicScope.Web
+		SccProjectEnlistmentChoice14 = 2
+		SccProjectUniqueName15 = Kovai.AtomicScope.Common\\Kovai.AtomicScope.BusinessAccess\\Kovai.AtomicScope.BusinessAccess.csproj
+		SccProjectTopLevelParentUniqueName15 = Kovai.AtomicScope.sln
+		SccProjectName15 = Kovai.AtomicScope.Common/Kovai.AtomicScope.BusinessAccess
+		SccLocalPath15 = Kovai.AtomicScope.Common\\Kovai.AtomicScope.BusinessAccess
+		SccProjectUniqueName16 = Kovai.AtomicScope.Core\\Kovai.AtomicScope.Core.csproj
+		SccProjectTopLevelParentUniqueName16 = Kovai.AtomicScope.sln
+		SccProjectName16 = Kovai.AtomicScope.Core
+		SccLocalPath16 = Kovai.AtomicScope.Core
+		SccProjectUniqueName17 = Kovai.AtomicScope.Models\\Kovai.AtomicScope.Models.csproj
+		SccProjectTopLevelParentUniqueName17 = Kovai.AtomicScope.sln
+		SccProjectName17 = Kovai.AtomicScope.Models
+		SccLocalPath17 = Kovai.AtomicScope.Models
+		SccProjectUniqueName18 = Kovai.AtomicScope.Testing\\IntegrationTests\\IntegrationTests.csproj
+		SccProjectTopLevelParentUniqueName18 = Kovai.AtomicScope.sln
+		SccProjectName18 = Kovai.AtomicScope.Testing/IntegrationTests
+		SccLocalPath18 = Kovai.AtomicScope.Testing\\IntegrationTests
+		SccProjectUniqueName19 = Kovai.AtomicScope.Testing\\TestUtility\\TestUtility.csproj
+		SccProjectTopLevelParentUniqueName19 = Kovai.AtomicScope.sln
+		SccProjectName19 = Kovai.AtomicScope.Testing/TestUtility
+		SccLocalPath19 = Kovai.AtomicScope.Testing\\TestUtility
+	EndGlobalSection
+EndGlobal

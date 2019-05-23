@@ -1,0 +1,72 @@
+@import "../variables";
+@import "../mixins";
+
+.user-widget-7 {
+	text-align: center;
+	padding: $side-margin 0;
+	position: relative;
+	.user-widget-bg {
+		z-index: 1;
+		&:before {
+			position: absolute;
+			content: "";
+			display: block;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 60px;
+			width: 100%;
+		}
+
+		&:after {
+			background-image: url(/assets/images/bg1.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			position: absolute;
+			content: "";
+			display: block;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 60px;
+			width: 100%;
+		}
+	}
+
+  .rounded-circle {
+    border: 3px solid #fff;
+    height: 80px;
+    width: 80px;
+    @include box-shadow;
+		margin-bottom: $side-margin;
+		z-index: 10 !important;
+  }
+	h5 {
+		font-weight: 700;
+		@include font-size(15px);
+		margin-bottom: 10px;
+	}
+	p {
+		@include font-size(13px);
+		margin-bottom: 10px;
+		&.location {
+			margin-right: 10px;
+		}
+	}
+	
+}
+
+@each $key, $value in $default-palette {
+	.user-widget-7 {
+		.user-widget-bg {
+		&:before {
+			background: map-get($value, "highlight-color");
+		}
+		&:after {
+			opacity: 0.15;
+		}
+		}
+  }
+}

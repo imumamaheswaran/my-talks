@@ -1,0 +1,88 @@
+@import "../mixins";
+
+@mixin sample-form-2($height, $width, $padding, $margin) {
+  position: relative;
+  padding: $padding;
+  height: $height;
+  width: $width;
+  overflow: hidden;
+
+  h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: $margin;
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: $margin * 2;
+  }
+
+  .input-group {
+    margin-bottom: $margin;
+  }
+
+  label {
+    font-weight: 600;
+    @include font-size(13px);
+    margin-bottom: $margin;
+  }
+
+  .btn {
+    margin-bottom: $margin;
+  }
+
+  .links {
+    a {
+      font-weight: 700;
+    }
+  }
+
+  form {
+    margin-left: $width / 3;
+  }
+
+  .side-description {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: $width / 3;
+    padding: $padding;
+    background-color: transparent;
+    z-index: 3;
+
+    .logo {
+      margin-bottom: $margin-bottom;
+    }
+  }
+
+  .side-bg-1 {
+    background: url(/assets/images/sign-in-3.jpg) no-repeat center center fixed;
+    background-size: cover;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: $width / 3;
+    bottom: 0;
+    height: $height;
+    width: $width / 3;
+    z-index: 1;
+  }
+
+  .side-bg-2 {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: $width / 3;
+    bottom: 0;
+    height: $height;
+    width: $width / 3;
+    z-index: 2;
+    opacity: 0.75;
+  }
+}

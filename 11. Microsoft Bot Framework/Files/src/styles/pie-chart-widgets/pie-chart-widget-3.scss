@@ -1,0 +1,27 @@
+@import '../variables';
+@import '../mixins';
+
+.pie-chart-widget-3 {
+
+	height: 220px;
+	overflow: hidden;
+  .row-1,
+  .row-2 {
+		height: 45px;
+  }
+  .row-3 {
+		height: 120px;
+  }
+
+  h4 {
+		padding: 0 10px;
+    @include font-size(16px);
+    font-weight: 700;
+  }
+
+  h5 {
+		padding: 0 10px;
+    @include font-size(13px);
+  }
+
+}

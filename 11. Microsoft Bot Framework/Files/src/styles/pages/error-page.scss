@@ -1,0 +1,29 @@
+.error-page {
+  width: 500px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+
+  h1 {
+    font-size: 128px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+
+    &.btn-primary {
+      border: none !important;
+      background: none !important;
+    }
+  }
+}

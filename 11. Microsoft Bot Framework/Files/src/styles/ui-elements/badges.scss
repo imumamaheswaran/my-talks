@@ -1,0 +1,77 @@
+@import "../variables";
+
+[data-controller="ui-elements"][data-view="badges"] {
+  .demo {
+    .badge {
+      margin-right: 5px;
+    }
+  }
+}
+
+.badge {
+  border-radius: 8px;
+  border: 0;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 0.8;
+  padding: 8px 12px;
+  font-weight: 700;
+
+  &.badge-sm {
+    font-size: 0.6rem;
+    line-height: 0.6;
+  }
+
+  &.badge-lg {
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  &.badge-rounded {
+    padding: 0 !important;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+
+    &.badge-sm {
+      height: 18px;
+      width: 18px;
+      line-height: 18px;
+      border-radius: 50%;
+
+      &.badge-outline {
+        line-height: 16px;
+      }
+    }
+
+    &.badge-lg {
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+      border-radius: 50%;
+
+      &.badge-outline {
+        line-height: 28px;
+      }
+    }
+  }
+
+  @each $key, $value in $bootstrap-colors {
+    &.badge-#{$key}:not(.badge-outline) {
+      background-color: $value;
+      color: #fff;
+      box-shadow: 0px 0px 1px $value;
+    }
+
+    &.badge-outline {
+      &.badge-#{$key} {
+        box-shadow: 0px 0px 1px $value;
+        background-color: transparent;
+        color: $value;
+      }
+    }
+  }
+}

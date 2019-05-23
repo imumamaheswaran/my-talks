@@ -1,0 +1,150 @@
+@import "../variables";
+@import "../mixins";
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .fc-button {
+      background-color: map-get($value, "background-color");
+      border-color: map-get($value, "border-color");
+      color: map-get($value, "color");
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      text-shadow: none;
+      outline: none;
+
+      &:hover,
+      &:active {
+        outline: none;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+
+    .fc-unthemed th,
+    .fc-unthemed td,
+    .fc-unthemed thead,
+    .fc-unthemed tbody,
+    .fc-unthemed .fc-divider,
+    .fc-unthemed .fc-row,
+    .fc-unthemed .fc-popover {
+      color: map-get($value, "color");
+      background-color: map-get($value, "background-color");
+      border-color: map-get($value, "border-color");
+    }
+
+    .fc-unthemed .fc-popover {
+      background-color: map-get($value, "background-color");
+    }
+
+    .fc-unthemed .fc-divider,
+    .fc-unthemed .fc-popover .fc-header {
+      background-color: map-get($value, "background-color");
+    }
+
+    .fc-unthemed .fc-popover .fc-header .fc-close {
+      background-color: map-get($value, "color");
+    }
+
+    .fc-unthemed .fc-today {
+      background: map-get($value, "background-color");
+    }
+
+    .fc-highlight {
+      background: map-get($value, "background-color");
+      opacity: .3;
+      filter: alpha(opacity = 30);
+
+      /* for IE */
+    }
+
+    .fc-bgevent {
+      background: map-get($value, "background-color");
+    }
+
+    .fc-nonbusiness {
+      background: map-get($value, "background-color");
+    }
+
+    .fc-state-default {
+      background-color: map-get($value, "background-color");
+      background-image: none;
+      background-repeat: no-repeat;
+      border-color: map-get($value, "border-color");
+      color: map-get($value, "color");
+      text-shadow: none;
+      box-shadow: none;
+    }
+
+    .fc-state-hover,
+    .fc-state-down,
+    .fc-state-active,
+    .fc-state-disabled {
+      color: map-get($value, "color");
+      background-color: map-get($value, "background-color");
+    }
+
+    .fc-state-hover {
+      color: map-get($value, "color");
+      text-decoration: none;
+      background-position: 0 0;
+    }
+
+    .fc-state-down,
+    .fc-state-active {
+      background-color: map-get($bootstrap-colors, "primary");
+      color: #fff;
+      background-image: none;
+      box-shadow: rgba(0, 0, 0, 0);
+    }
+
+    .fc-state-disabled {
+      background-image: none;
+      opacity: 0.65;
+      filter: alpha(opacity = 65);
+    }
+
+    .fc-popover {
+      box-shadow: none;
+    }
+
+    .fc-event {
+      border: 1px solid map-get($value, "border-color");
+      background-color: map-get($value, "highlight-color");
+      color: #fff;
+      padding: 5px;
+    }
+
+    .fc-event,
+    .fc-event:hover,
+    .ui-widget .fc-event {
+      border: 1px solid map-get($value, "highlight-color");
+      background-color: map-get($value, "highlight-color");
+      color: #fff;
+    }
+
+    .fc-content {
+      color: #fff !important;
+    }
+
+    .fc-event .fc-bg {
+      background: map-get($value, "background-color");
+      opacity: .25;
+      filter: alpha(opacity = 25);
+
+      /* for IE */
+    }
+
+    .fc-now-indicator {
+      border: 0 solid map-get($bootstrap-colors, "danger");
+    }
+  }
+}
+
+@media (max-width: #{$breakpoint}) {
+	#calendar {
+		.fc-toolbar {
+			h2 {
+				margin-top: 20px;
+				@include font-size(18px);
+			}
+		}
+	}
+}

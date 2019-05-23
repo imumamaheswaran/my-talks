@@ -1,0 +1,21 @@
+@import "../variables";
+@import "../mixins";
+
+.activity-widget-3 {
+
+	.media {
+		margin-bottom: $side-margin;
+	}
+	p {
+		@include font-size(13px);
+		margin-bottom: 10px;
+	}
+  .rounded-circle {
+    border: 3px solid #fff;
+    height: 50px;
+    width: 50px;
+    @include box-shadow;
+		margin-right: $side-margin;
+	}
+}
+

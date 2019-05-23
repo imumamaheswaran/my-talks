@@ -1,0 +1,14 @@
+<div class="bg-dark" *ngIf="layout == 'empty-view-1'"></div>
+<navbar-1 *ngIf="layout == 'default-sidebar-1' || layout == 'collapsed-sidebar-1' || layout == 'off-canvas-1' || layout == 'sidebar-over-1' || layout == 'top-navigation-1' || layout == 'top-navigation-2'"></navbar-1>
+<div class="container-fluid">
+    <div class="row">
+			<div class="left-sidebar-placeholder" *ngIf="layout == 'default-sidebar-1' || layout == 'collapsed-sidebar-1' || layout == 'off-canvas-1' || layout == 'sidebar-over-1' || layout == 'top-navigation-1' || layout == 'top-navigation-2'"></div>
+			<left-sidebar-1 *ngIf="layout == 'default-sidebar-1' || layout == 'collapsed-sidebar-1' || layout == 'off-canvas-1' || layout == 'sidebar-over-1' || layout == 'top-navigation-1' || layout == 'top-navigation-2'"></left-sidebar-1>
+			<div class="col main">
+				<div class="page">
+						<router-outlet></router-outlet>
+				</div>
+			</div>
+	</div>
+</div>
+<backdrops></backdrops>

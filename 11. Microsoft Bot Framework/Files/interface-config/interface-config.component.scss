@@ -1,0 +1,23 @@
+#interface-config {
+    form {
+        .collapsed {
+            .sli-minus {
+                display: none;
+            }
+            .sli-plus {
+                display: inline-block;
+            }
+        }
+
+        .sli-plus {
+            display: none;
+            transition: .5s ease-in-out;
+        }
+        .sli-minus {
+            display: inline-block;
+            transition: .5s ease-in-out;
+        }
+
+    }
+
+}

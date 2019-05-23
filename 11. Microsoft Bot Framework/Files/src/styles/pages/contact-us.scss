@@ -1,0 +1,44 @@
+@import "../variables";
+@import "../mixins";
+@import "_sample-form-4";
+$width: 620px;
+$height: 640px;
+$padding: 30px;
+$margin: 10px;
+
+.contact-us {
+  &.sample-form-4 {
+    @include sample-form-4($height, $width, $padding, $margin);
+
+    @include box-shadow;
+
+    textarea {
+      height: 150px;
+    }
+
+    @media (max-width: 543px) {
+      @include sample-form-4($height, 400px, $padding, $margin);
+    }
+
+    @media (min-width: 544px) and (max-width: 767px) {
+      @include sample-form-4($height, 500px, $padding, $margin);
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .contact-us {
+      &.sample-form-4 {
+        background-color: map-get($value, "background-color");
+        border-color: map-get($value, "border-color");
+        color: map-get($value, "color");
+
+        h3 {
+          background-color: map-get($bootstrap-colors, "info");
+          color: #fff;
+        }
+      }
+    }
+  }
+}

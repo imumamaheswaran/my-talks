@@ -1,0 +1,194 @@
+@import "../variables";
+@import "../palettes/tables";
+$amount: 5%;
+
+.table {
+	margin-bottom: 0;
+  th,
+  td {
+    border-width: 1px;
+  }
+
+  thead,
+  tbody {
+    th,
+    td {
+      border-width: 1px;
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  tbody {
+    tr {
+      &.table-active {
+        > th,
+        > td {
+        }
+      }
+    }
+  }
+
+  &.table-unbordered {
+    thead,
+    tbody {
+      th,
+      td,
+      tr {
+        border: none !important;
+      }
+    }
+  }
+
+  &.table-condensed {
+    th,
+    td {
+      padding: 5px 10px;
+    }
+  }
+}
+
+@each $key, $value in $table-palettes {
+  [data-background="#{$key}"] {
+    .table {
+      th,
+      td {
+        background-color: map-get($value, 'background-color');
+        border-color: map-get($value, 'border-color');
+        color: map-get($value, 'color');
+      }
+
+      tbody {
+        td {
+          border-color: map-get($value, 'border-color');
+
+          &:hover {
+            background-color: map-get($value, 'hover-color');
+          }
+        }
+      }
+
+      thead {
+        th {
+          background-color: map-get($value, 'even-color');
+          border-color: map-get($value, 'border-color');
+          border-top-color: map-get($value, 'even-color');
+        }
+      }
+
+      thead {
+        &.thead-default {
+          th {
+            background-color: map-get($value, 'background-color');
+            border-color: map-get($value, 'border-color');
+          }
+        }
+
+        &.thead-inverse {
+          th {
+            color: map-get($value, 'background-color');
+            background-color: map-get($value, 'color');
+            border-color: map-get($value, 'color');
+          }
+        }
+
+        @each $key, $value in $bootstrap-colors {
+          @if ($key == 'default') {
+          } @else {
+            &.thead-#{$key} {
+              th {
+                border-color: $value;
+                background-color: $value;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          &:hover {
+            td {
+              background-color: map-get($value, 'hover-color');
+            }
+          }
+
+          &.table-active {
+            > th,
+            > td {
+              background-color: map-get($value, 'hover-color');
+            }
+          }
+
+          @each $key, $value in $bootstrap-colors {
+            &.table-#{$key} {
+              > td {
+                border-color: $value !important;
+                background-color: $value !important;
+                color: #fff;
+              }
+
+              tr {
+                &:hover {
+                  > td {
+                    border-color: darken($value, $amount);
+                    background-color: darken($value, $amount);
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &.table-striped {
+        tbody {
+          tr {
+            &:nth-child(even) {
+              td {
+                background-color: map-get($value, 'even-color');
+              }
+            }
+
+            &:nth-child(odd) {
+              td {
+                background-color: map-get($value, 'odd-color');
+              }
+            }
+          }
+        }
+      }
+
+      &.table-unbordered {
+        thead,
+        tbody {
+          th,
+          td,
+          tr {
+            border: none !important;
+          }
+        }
+      }
+
+      &.table-hover {
+        @each $key, $value in $bootstrap-colors {
+          &.table-hover-#{$key} {
+            tbody {
+              tr {
+                &:hover {
+                  td {
+                    border-color: $value;
+                    background-color: $value;
+                    color: #fff;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

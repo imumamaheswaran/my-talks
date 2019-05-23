@@ -1,0 +1,254 @@
+@import "../variables";
+@import "../mixins";
+@import "../palettes/top-navigation";
+
+.top-navigation {
+		&.top-navigation-1 {
+		display: block;
+		width: 100%;
+		z-index: $zindex-navbar-fixed;
+		white-space: nowrap;
+
+		> ul {
+			> li {
+				margin: 0;
+				padding: 0 15px;
+
+				> a {
+					height: $top-navigation-height;
+					line-height: $top-navigation-height;
+					@include font-size(13px);
+					font-weight: 700;
+				}
+
+				> ul {
+					li {
+						height: $top-navigation-dropdown-height;
+						line-height: $top-navigation-dropdown-height;
+						margin: 0;
+						padding: 0 15px;
+
+						a {
+							height: $top-navigation-dropdown-height;
+							line-height: $top-navigation-dropdown-height;
+							@include font-size(13px);
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+
+		.menu-bottom {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			z-index: $zindex-navbar-fixed;
+
+			.level-1 {
+				position: relative;
+				z-index: $zindex-navbar-fixed;
+
+				//@include arrow($zindex-navbar-fixed + 1, 'primary');
+
+				> a {
+					.badge {
+						position: absolute;
+						top: 5px;
+						left: 100%;
+						transform: scale(0.85);
+						border: 0;
+						box-shadow: none !important;
+
+						&.badge-pill {
+							display: none;
+						}
+					}
+				}
+			}
+
+			a {
+				position: relative;
+
+				&.has-children {
+					&:before {
+						font-family: 'simple-line-icons';
+						content: "\e606";
+						position: absolute;
+						top: 0;
+						right: 0;
+						@include font-size(10px);
+						transition: transform 0.3s ease;
+					}
+				}
+			}
+
+			> li {
+				position: relative;
+
+				> a {
+					width: 100%;
+					display: block;
+				}
+
+				> ul {
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: $top-navigation-menu-width;
+					pointer-events: none;
+					opacity: 0;
+					//transition: opacity 0.2s ease;
+
+					> li {
+						position: relative;
+						width: $top-navigation-menu-width;
+
+						> ul {
+							position: absolute;
+							top: 0;
+							left: 100%;
+							width: $top-navigation-menu-width;
+							pointer-events: none;
+							opacity: 0;
+							//transition: opacity 0.2s ease;
+
+							> li {
+								width: $top-navigation-menu-width;
+							}
+						}
+
+						&:hover {
+							> ul {
+								pointer-events: auto;
+								opacity: 1;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					> ul {
+						pointer-events: auto;
+						opacity: 1;
+					}
+				}
+			}
+		}
+    > ul {
+      > li {
+        > a {
+          height: $top-navigation-1-height;
+          line-height: $top-navigation-1-height;
+
+          i {
+            display: none;
+          }
+        }
+
+        > ul {
+          li {
+            height: $top-navigation-1-dropdown-height;
+            line-height: $top-navigation-1-dropdown-height;
+
+            a {
+              height: $top-navigation-1-dropdown-height;
+              line-height: $top-navigation-1-dropdown-height;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $top-navigation-palettes {
+  [data-top-navigation="#{$key}"] {
+    .top-navigation {
+      &.top-navigation-1 {
+        background: map-get($value, 'background-color');
+        color: map-get($value, 'color');
+
+        a {
+          background: map-get($value, 'background-color');
+          color: map-get($value, 'color');
+        }
+
+        .menu-bottom {
+          background: map-get($value, 'background-color');
+          border-color: map-get($value, 'border-color');
+
+          .level-1 {
+            position: relative;
+
+            &:after {
+              content: "";
+              display: none;
+              position: absolute;
+              top: calc(100% - 3px);
+              left: 0px;
+              right: 0;
+              width: 100%;
+              height: 3px;
+              background-color: map-get($value, 'highlight-color');
+            }
+
+            &:hover {
+              &:after {
+                display: block;
+              }
+            }
+          }
+
+          > li {
+            > ul {
+              @include box-shadow();
+
+              > li {
+                &:hover {
+                  background: map-get($value, 'highlight-color');
+
+                  > a {
+                    background: map-get($value, 'highlight-color');
+                    color: map-get($value, 'highlight-text-color');
+                  }
+                }
+
+                > ul {
+                  > li {
+                    &:hover {
+                      background: map-get($value, 'highlight-color');
+
+                      > a {
+                        background: map-get($value, 'highlight-color');
+                        color: map-get($value, 'highlight-text-color');
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $top-navigation-palettes {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-top-navigation="#{$key}"] {
+      .top-navigation {
+        &.top-navigation-1 {
+          background: map-get($value, 'even-color');
+
+          li,
+          a {
+            background: map-get($value, 'even-color');
+          }
+        }
+      }
+    }
+  }
+}
+

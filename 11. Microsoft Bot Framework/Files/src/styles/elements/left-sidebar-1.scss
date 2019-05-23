@@ -1,0 +1,200 @@
+@import "../variables";
+@import "../mixins";
+
+.left-sidebar {
+  &.left-sidebar-1 {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .section-title {
+      display: flex;
+      height: 50px;
+      margin-left: 25px;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-transform: uppercase;
+    }
+
+    .btn-sidebar {
+      display: flex;
+      height: 50px;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      position: relative;
+      border: none;
+
+      i {
+        width: 40px;
+        margin-right: 10px;
+
+        @include font-size(16px);
+      }
+    }
+
+    .btn-sidebar-1 {
+      position: relative;
+      text-transform: capitalize;
+
+      &.has-children {
+        &:before {
+          font-family: 'simple-line-icons';
+          content: "\e606";
+          position: absolute;
+          top: 17px;
+          right: $side-margin;
+          font-size: 10px;
+          transition: #{$default-transform};
+          transform: rotate(-720deg);
+        }
+
+        &[aria-expanded="true"] {
+          &:before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+
+      .badge {
+        display: none;
+      }
+    }
+
+    .btn-sidebar-2 {
+      text-transform: capitalize;
+    }
+
+    .section {
+      .section-title {
+        font-weight: 700;
+      }
+
+      ul {
+        > li {
+          position: relative;
+
+          > ul {
+            > li {
+              i {
+                visibility: hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-sidebar="#{$key}"] {
+    .left-sidebar-placeholder {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+    }
+
+    .left-sidebar {
+      &.left-sidebar-1 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .section > ul > li:hover > .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+          @include sideline(4px, map-get($value, "highlight-color"));
+
+          &:hover {
+            background: map-get($value, "background-color") !important;
+            color: map-get($value, "color") !important;
+            @include sideline(4px, map-get($value, "highlight-color"));
+
+            i {
+              color: map-get($value, "color") !important;
+            }
+          }
+        }
+
+        .section > ul > li:hover > ul {
+          background: map-get($value, "background-color") !important;
+          color: map-get($value, "color") !important;
+        }
+
+        .btn-default.btn-flat.btn-sidebar {
+          background: map-get($value, "background-color");
+          color: map-get($value, "color");
+          transition: none !important;
+
+          &:hover {
+            background: map-get($value, "background-color");
+            color: map-get($value, "color");
+            @include sideline(4px, map-get($value, "highlight-color"));
+          }
+
+          &:active,
+          &:focus,
+          &:visited,
+          &.focus {
+            background: map-get($value, "background-color");
+            color: map-get($value, "color");
+            @include sideline(4px, map-get($value, "highlight-color"));
+          }
+
+          &[data-toggle="collapse"][aria-expanded="true"] {
+            background: map-get($value, "background-color");
+            color: map-get($value, "color");
+            @include sideline(4px, map-get($value, "highlight-color"));
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-sidebar="#{$key}"] {
+      .left-sidebar-placeholder {
+        background: map-get($value, "even-color");
+      }
+
+      .left-sidebar {
+        &.left-sidebar-1 {
+          background: map-get($value, "even-color");
+
+          .section > ul > li:hover > .btn-default.btn-flat.btn-sidebar {
+            background: map-get($value, "even-color");
+
+            &:hover {
+              background: map-get($value, "even-color") !important;
+            }
+          }
+
+          .section > ul > li:hover > ul {
+            background: map-get($value, "even-color") !important;
+          }
+
+          .btn-default.btn-flat.btn-sidebar {
+            background: map-get($value, "even-color");
+
+            &:active,
+            &:focus,
+            &:visited,
+            &.focus {
+              background: map-get($value, "even-color");
+            }
+
+            &:hover {
+              background: map-get($value, "even-color");
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

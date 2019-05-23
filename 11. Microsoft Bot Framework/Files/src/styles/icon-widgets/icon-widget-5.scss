@@ -1,0 +1,25 @@
+@import '../variables';
+@import '../mixins';
+
+$height: 70px;
+.icon-widget-5 {
+	@include font-size(15px);
+	height: $height;
+	padding: 0 10px;
+	.row {
+		height: $height;
+		> .col {
+			> .row {
+				height: $height / 2;
+			}
+		}
+	}
+	.number, 
+	.text {
+		white-space: nowrap;
+	}
+	i {
+		@include font-size(20px);
+	}
+}
+

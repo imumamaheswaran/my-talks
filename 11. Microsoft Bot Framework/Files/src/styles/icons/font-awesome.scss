@@ -1,0 +1,48 @@
+@import "../variables";
+
+.font-awesome-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  .icon {
+    text-align: center;
+    width: 150px;
+    min-height: 100px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    i {
+      margin: 0 5px;
+    }
+
+    .icons {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .icon-class {
+      display: block;
+      font-size: 13px;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .font-awesome-icons {
+      .icon {
+        //background-color: map-get($value, 'background-color');
+        color: map-get($value, "color");
+
+        //border: 1px solid map-get($value, 'border-color');
+        i,
+        .icon-class {
+          color: map-get($value, "color");
+        }
+      }
+    }
+  }
+}

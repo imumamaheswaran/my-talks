@@ -1,0 +1,74 @@
+@import "../variables";
+
+.icon-search {
+  .input-group-addon {
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  }
+
+  input {
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+}
+
+.weather-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  .icon {
+    text-align: center;
+    width: 150px;
+    min-height: 100px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+
+    i {
+      margin: 0 5px;
+    }
+
+    .icons {
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .icon-class {
+      display: block;
+      font-size: 13px;
+    }
+  }
+}
+
+.wi {
+  font-size: 16px;
+
+  &.wi-1x {
+    font-size: 16px;
+  }
+
+  &.wi-2x {
+    font-size: 28px;
+  }
+
+  &.wi-3x {
+    font-size: 40px;
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .weather-icons {
+      .icon {
+        color: map-get($value, "color");
+
+        i,
+        .icon-class {
+          color: map-get($value, "color");
+        }
+      }
+    }
+  }
+}

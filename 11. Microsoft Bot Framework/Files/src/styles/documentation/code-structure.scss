@@ -1,0 +1,23 @@
+[data-controller="documentation"][data-view="code-structure"] {
+  .naming-conventions {
+    > li {
+      margin-bottom: 20px;
+    }
+  }
+
+  .questions {
+    padding-left: 15px;
+
+    > li {
+      margin-bottom: 40px;
+
+      p {
+        margin-bottom: 10px;
+
+        &:nth-child(1) {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

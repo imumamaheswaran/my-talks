@@ -1,0 +1,19 @@
+CODE EDITING
+============
+1) Intellisense filtering
+2) Match highlighting
+3) Better IntelliSense behaviours
+	C#, VB, XAML, C++, JavaScript(Full revamp) dynamic to static analysis
+4) Coding convention support via .editorconfig
+5) Code Analysis for C# and VB
+6) Live editing experiences
+
+NAVIGATION
+==========
+1) Go To(Ctrl+G)
+2) Find all references
+
+DEBUGGING
+=========
+1) Run to Click
+2) Filter Attach to Process

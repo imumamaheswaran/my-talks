@@ -1,0 +1,11 @@
+@function calculate-rem($size) {
+  $remSize: $size / 16px;
+
+  @return $remSize * 1rem;
+}
+
+
+@function map-set($map, $key, $value) {
+	$new: ($key: $value);
+	@return map-merge($map, $new);
+}

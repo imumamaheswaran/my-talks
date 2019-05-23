@@ -1,0 +1,23 @@
+@for $i from 0 through 10 {
+  .t-#{$i * 5} {
+    top: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .r-#{$i * 5} {
+    right: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .b-#{$i * 5} {
+    bottom: #{$i * 5}px !important;
+  }
+}
+
+@for $i from 0 through 10 {
+  .l-#{$i * 5} {
+    left: #{$i * 5}px !important;
+  }
+}

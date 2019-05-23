@@ -1,0 +1,65 @@
+@import "../variables";
+@import "../mixins";
+
+.jumbotron {
+  &.jumbotron-2 {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+
+    h4 {
+      padding: $side-margin * 2 $side-margin 5px 23px;
+      @include font-size(20px);
+      font-weight: 700;
+
+      @media (max-width: #{$breakpoint}) {
+        padding-left: 0;
+        margin-left: -10px;
+      }
+    }
+
+    h5 {
+      padding: 0 $side-margin 0 23px;
+      @include font-size(16px);
+
+      @media (max-width: #{$breakpoint}) {
+        padding-left: 0;
+        margin-left: -10px;
+      }
+    }
+
+    .btn {
+      float: right;
+      margin-right: 10px;
+      margin-top: $side-margin * 2;
+
+      @media (max-width: #{$breakpoint}) {
+        display: none;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    .jumbotron {
+      &.jumbotron-2 {
+        background-color: map-get($value, "background-color");
+        color: map-get($value, "color");
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-navbar="#{$key}"] {
+      .jumbotron {
+        &.jumbotron-2 {
+          background: map-get($value, "even-color");
+        }
+      }
+    }
+  }
+}
+

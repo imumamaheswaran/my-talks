@@ -1,0 +1,55 @@
+@import "../variables";
+@import "../mixins";
+
+#dropdown-tasks {
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: -1px;
+
+  .dropdown-item {
+    flex-direction: column;
+
+    p {
+      margin-bottom: 0;
+
+      .title {
+      }
+
+      .percent {
+        float: right;
+        font-weight: 700;
+      }
+    }
+
+    .progress {
+      margin-top: 10px;
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    #dropdown-tasks {
+      background: map-get($value, "background-color");
+      color: map-get($value, "color");
+
+      .dropdown-title {
+        background: map-get($value, "border-color");
+        color: map-get($value, "color");
+      }
+
+      .dropdown-item {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .progress {
+          background-color: map-get($value, "background-color");
+        }
+      }
+    }
+  }
+}	

@@ -1,0 +1,26 @@
+@import "../palettes";
+
+$light: map-get($default-palette, "light");
+$dark: map-get($default-palette, "dark");
+$indigo: map-get($default-palette, "indigo");
+$blue-grey: map-get($default-palette, "blue-grey");
+
+$light: map-set($light, "background-color", darken(map-get($light, "background-color"), 8));
+$light: map-set($light, "background-hover-color", darken(map-get($light, "background-color"), 12));
+$light: map-set($light, "hover-color", map-get($light, "color"));
+
+$dark: map-set($dark, "background-hover-color", darken(#ffffff, 4));
+$dark: map-set($dark, "hover-color", map-get($dark, "background-color"));
+
+$indigo: map-set($indigo, "background-hover-color", darken(#ffffff, 4));
+$indigo: map-set($indigo, "hover-color", map-get($indigo, "background-color"));
+
+$blue-grey: map-set($blue-grey, "background-hover-color", darken(#ffffff, 4));
+$blue-grey: map-set($blue-grey, "hover-color", map-get($blue-grey, "background-color"));
+
+$button-palettes: (
+	"light": $light,
+	"dark": $dark,
+	"indigo": $indigo,
+	"blue-grey": $blue-grey
+);

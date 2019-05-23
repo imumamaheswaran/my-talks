@@ -1,0 +1,43 @@
+@import "../mixins";
+
+@mixin sample-form-4($height, $width, $padding, $margin) {
+  position: relative;
+  height: $height;
+  width: $width;
+
+  form {
+    padding: 0 $padding $padding $padding;
+  }
+
+  h3 {
+    padding: ($padding / 2) $padding;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-bottom: $margin;
+    font-weight: 700;
+  }
+
+  p {
+    margin-bottom: $margin * 2;
+  }
+
+  .input-group {
+    margin-bottom: $margin;
+  }
+
+  label {
+    font-weight: 600;
+    @include font-size(13px);
+    margin-bottom: $margin;
+  }
+
+  .btn {
+    margin-bottom: $margin;
+  }
+
+  .links {
+    a {
+      font-weight: 700;
+    }
+  }
+}

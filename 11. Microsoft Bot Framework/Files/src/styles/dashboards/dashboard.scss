@@ -1,0 +1,69 @@
+@import "../variables";
+@import "../mixins";
+
+[data-controller="dashboards"][data-view="dashboard"] {
+	.dashboard-chart-widget-1 {
+		.title {
+			font-weight: 700;	
+			@include font-size(17px);
+		}
+		.subtitle {
+			margin-bottom: 20px;
+			@include font-size(13px);
+		}
+	}
+  #line-chart-1 {
+    height: 280px;
+    width: 100%;
+  }
+
+  @media (max-width: 543px) {
+    #line-chart-1 {
+      height: 160px;
+      width: 100%;
+    }
+  }
+
+  #bar-chart-3 {
+    height: 280px;
+    width: 100%;
+  }
+
+  @media (max-width: 543px) {
+    #bar-chart-3 {
+      height: 160px;
+      width: 100%;
+    }
+  }
+
+  .widget-1 {
+    position: relative;
+    margin-bottom: $margin-bottom;
+
+    .title {
+      font-weight: 700;
+      @include font-size(15px);
+    }
+
+    .subtitle {
+      font-weight: 500;
+      @include font-size(13px);
+    }
+
+    .numbers {
+      text-align: right;
+      position: absolute;
+      top: 0;
+      right: 10px;
+
+      .price {
+				font-weight: 700;
+				@include font-size(17px);
+      }
+
+      .value {
+				@include font-size(13px);
+      }
+    }
+  }
+}

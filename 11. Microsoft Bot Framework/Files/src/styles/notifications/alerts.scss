@@ -1,0 +1,58 @@
+@import "../variables";
+@import "../mixins";
+
+.alert {
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @each $key, $value in $bootstrap-colors {
+    &.alert-#{$key} {
+      color: #fff;
+      background-color: $value;
+      border-color: $value;
+      border-radius: 5px;
+
+      @include box-shadow;
+
+      .alert-heading {
+        margin-bottom: 10px;
+      }
+
+      &.alert-outline {
+        background-color: transparent !important;
+        border-style: solid;
+        border-width: 1px;
+        border-color: $value;
+        color: $value;
+        border-radius: 5px;
+
+        @include box-shadow;
+
+        .close {
+          color: $value;
+          text-shadow: none !important;
+          opacity: 0.7 !important;
+        }
+      }
+
+      &.alert-bordered {
+        background-color: transparent !important;
+        border: 0;
+        border-left: 5px solid $value;
+        color: $value;
+        border-radius: 0;
+
+        @include box-shadow;
+
+        .close {
+          color: $value;
+          text-shadow: none !important;
+          opacity: 0.7 !important;
+        }
+      }
+    }
+  }
+}

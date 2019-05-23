@@ -1,0 +1,11 @@
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\bin\Debug\netcoreapp2.2\TestDemo.deps.json
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\bin\Debug\netcoreapp2.2\TestDemo.runtimeconfig.json
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\bin\Debug\netcoreapp2.2\TestDemo.runtimeconfig.dev.json
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\bin\Debug\netcoreapp2.2\TestDemo.dll
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\obj\Debug\netcoreapp2.2\TestDemo.csprojAssemblyReference.cache
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\obj\Debug\netcoreapp2.2\TestDemo.csproj.CoreCompileInputs.cache
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\obj\Debug\netcoreapp2.2\TestDemo.AssemblyInfoInputs.cache
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\obj\Debug\netcoreapp2.2\TestDemo.AssemblyInfo.cs
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\bin\Debug\netcoreapp2.2\TestDemo.pdb
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\obj\Debug\netcoreapp2.2\TestDemo.dll
+D:\Data\Documents\Sessions\28. monitoring made easy\src 2\TestDemo\TestDemo\obj\Debug\netcoreapp2.2\TestDemo.pdb

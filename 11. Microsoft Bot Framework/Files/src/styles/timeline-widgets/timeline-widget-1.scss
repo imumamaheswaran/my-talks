@@ -1,0 +1,65 @@
+@import "../variables";
+
+.timeline-widget-1 {
+  position: relative;
+
+  .timeline-item {
+    padding: 0 0 20px 30px;
+    font-size: 0.9rem;
+
+    p {
+      margin-bottom: 5px;
+
+      &:nth-child(1) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  .actions {
+    font-size: 0.8rem;
+
+    span,
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  @each $name, $color in $bootstrap-colors {
+    .timeline-#{$name} {
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        display: table;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 2px;
+        top: 0;
+        bottom: 0px;
+        left: calc(0% + 15px);
+        z-index: 1;
+        background: $color;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 15px;
+        left: calc(0% + 15px);
+        margin-left: -5px;
+        width: 12px;
+        height: 12px;
+        background-color: $color;
+        border-radius: 50% !important;
+        z-index: 2;
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.TrackingSchema\bin\Debug\Kovai.AtomicScope.TrackingSchema.dll
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.TrackingSchema\bin\Debug\Kovai.AtomicScope.TrackingSchema.pdb
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.TrackingSchema\obj\Debug\Kovai.AtomicScope.TrackingSchema.dll
+D:\Data\Projects\Kovai.AtomicScope.Source\src\Kovai.AtomicScope\Kovai.AtomicScope.BizTalk\Common\Kovai.AtomicScope.TrackingSchema\obj\Debug\Kovai.AtomicScope.TrackingSchema.pdb

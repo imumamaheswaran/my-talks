@@ -1,0 +1,9 @@
+@import "../variables";
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .peity-chart {
+      color: map-get($value, "background-color");
+    }
+  }
+}

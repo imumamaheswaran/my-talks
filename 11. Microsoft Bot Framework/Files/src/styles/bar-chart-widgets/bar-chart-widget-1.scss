@@ -1,0 +1,12 @@
+@import "../variables";
+@import "../mixins";
+
+.bar-chart-widget-1 {
+	text-align: center;
+	.peity-chart {
+		display: block;
+		height: 75px;
+		margin-bottom: 30px;
+	}
+}
+

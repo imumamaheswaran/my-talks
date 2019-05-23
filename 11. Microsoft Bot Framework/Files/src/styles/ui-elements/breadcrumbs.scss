@@ -1,0 +1,107 @@
+@import "../variables";
+
+[data-controller="ui-elements"][data-view="breadcrumbs"] {
+  .widget {
+    > .row {
+      > .col {
+        > .description + .breadcrumb {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb {
+  border-radius: 0;
+  white-space: nowrap;
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 $side-margin 0 0;
+  margin: 0;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: row;
+
+  > li {
+    padding: 0;
+
+    &:before {
+      padding: 0 $side-margin;
+    }
+  }
+
+  &.icon-home {
+    > li:first-child {
+      &:before {
+        font-family: 'simple-line-icons';
+        content: "\e069";
+      }
+    }
+  }
+
+  &.icon-grid {
+    > li:first-child {
+      &:before {
+        font-family: 'simple-line-icons';
+        content: "\e06a";
+      }
+    }
+  }
+
+  &.icon-angle-right {
+    > li {
+      + li:before {
+        font-family: FontAwesome;
+        content: "\f105";
+      }
+    }
+  }
+
+  &.icon-angle-double-right {
+    > li {
+      + li:before {
+        font-family: FontAwesome;
+        content: "\f101";
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-background="#{$key}"] {
+    .breadcrumb {
+      color: map-get($value, "color");
+      background-color: map-get($value, "background-color");
+
+      li {
+        color: map-get($value, "color");
+
+        a {
+          color: map-get($value, "color");
+        }
+      }
+
+      &.no-bg,
+      &-no-bg {
+        background: transparent;
+      }
+
+      @each $key, $value in $bootstrap-colors {
+        &.breadcrumb-#{$key} {
+          background: $value;
+          color: #fff;
+
+          li {
+            color: #fff;
+
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

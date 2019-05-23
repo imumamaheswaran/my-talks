@@ -1,0 +1,58 @@
+@import '../variables';
+@import '../mixins';
+$image-width: 100px;
+$profile-description-left: 150px;
+
+[data-controller="pages"][data-view="user-profile"] {
+  .widget {
+    padding: $side-margin 0;
+  }
+
+  .tab-content {
+    p {
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      margin-bottom: $side-margin + 10px;
+    }
+  }
+
+  .user-profile-top {
+    position: relative;
+    padding: $side-margin $side-margin 0 $side-margin;
+
+    .rounded-circle {
+      width: $image-width;
+      border: 2px solid #fff;
+      @include box-shadow;
+      margin-bottom: $margin-bottom;
+    }
+
+    h5 {
+      position: absolute;
+      top: 32px;
+      left: $profile-description-left;
+      @include font-size(16px);
+      font-weight: 700;
+    }
+
+    p {
+      position: absolute;
+      top: 55px;
+      left: $profile-description-left;
+      @include font-size(13px);
+    }
+
+    .buttons {
+      position: absolute;
+      top: 82px;
+      left: $profile-description-left;
+
+      .btn {
+        @include box-shadow;
+      }
+    }
+  }
+}
+

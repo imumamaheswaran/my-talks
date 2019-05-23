@@ -1,0 +1,18 @@
+@import "../palettes";
+
+$light: map-get($default-palette, "light");
+$dark: map-get($default-palette, "dark");
+$indigo: map-get($default-palette, "indigo");
+$blue-grey: map-get($default-palette, "blue-grey");
+
+$light: map-set($light, 'focus-color', map-get($bootstrap-colors, 'info'));
+$dark: map-set($dark, 'focus-color', map-get($bootstrap-colors, 'info'));
+$indigo: map-set($indigo, 'focus-color', map-get($bootstrap-colors, 'info'));
+$blue-grey: map-set($blue-grey, 'focus-color', map-get($bootstrap-colors, 'info'));
+
+$form-palettes: (
+	"light": $light, 
+	"dark": $dark, 
+	"indigo": $indigo,
+	"blue-grey": $blue-grey
+);

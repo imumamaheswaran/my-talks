@@ -1,0 +1,177 @@
+@import "../variables";
+
+.navbar {
+  &.navbar-1 {
+    display: flex;
+    height: $navbar-height;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .logo {
+      padding-left: 10px;
+      padding-right: $side-margin;
+    }
+
+    .nav {
+      .nav-item {
+        .nav-link {
+          padding-left: $side-margin;
+          padding-right: $side-margin;
+        }
+      }
+    }
+
+    .dropdown {
+      &.show {
+        .dropdown-menu {
+          margin-top: 0;
+          top: 53px;
+        }
+      }
+    }
+
+    .navbar-search-form {
+      flex: 0 0 250px;
+      margin-left: 10px;
+      margin-right: $side-margin;
+
+      .input-group-addon {
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+      }
+
+      input {
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+      }
+    }
+
+    @media (max-width: 543px) {
+      .navbar-search-form {
+        display: none;
+      }
+
+      .navbar-left-1,
+      .navbar-left-2 {
+        display: none;
+      }
+
+      .navbar-right-1 {
+        display: none;
+      }
+    }
+
+    @media (min-width: 544px) and (max-width: 767px) {
+      .navbar-left-1,
+      .navbar-left-2 {
+        display: none;
+      }
+
+      .navbar-search-form {
+        display: none;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+      .navbar-left-1,
+      .navbar-left-2 {
+        display: none;
+      }
+
+      .navbar-search-form {
+        display: none;
+      }
+
+      .toggle-fullscreen {
+        display: none;
+      }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .navbar-search-form {
+        display: none;
+      }
+
+      .navbar-search-form {
+        flex: 0 0 200px;
+      }
+
+      .toggle-fullscreen {
+        display: none;
+      }
+
+      .navbar-right-2 {
+        display: none;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .navbar-right-2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  [data-navbar="#{$key}"] {
+    .navbar {
+      &.navbar-1 {
+        background: map-get($value, "background-color");
+        color: map-get($value, "color");
+
+        .nav-link {
+          color: map-get($value, "color");
+        }
+
+        .dropdown {
+          .dropdown-item {
+            a {
+              color: map-get($value, "color") !important;
+            }
+          }
+        }
+
+        .input-group {
+          .input-group-addon {
+            color: map-get($value, "color");
+            background-color: map-get($value, "even-color");
+            border-color: map-get($value, "even-color");
+          }
+
+          .form-control {
+            color: map-get($value, "color");
+            background-color: map-get($value, "even-color");
+            border-color: map-get($value, "even-color");
+          }
+        }
+      }
+    }
+  }
+}
+
+@each $key, $value in $default-palette {
+  @if ($key != 'light') {
+    [data-background="#{$key}"][data-navbar="#{$key}"] {
+      .navbar {
+        &.navbar-1 {
+          background: map-get($value, "even-color");
+
+          .input-group {
+            .input-group-addon {
+              background-color: map-get($value, "odd-color");
+              border-color: map-get($value, "odd-color");
+            }
+
+            .form-control {
+              background-color: map-get($value, "odd-color");
+              border-color: map-get($value, "odd-color");
+            }
+          }
+        }
+      }
+    }
+  }
+}
